@@ -1,5 +1,7 @@
 import { useState } from 'react'; 
 import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion';
+import { itemVariants } from '../animations/animations';
 import '../css/Contacts.css';
 
 function formatPhoneNumber(value: string): string {
@@ -62,7 +64,7 @@ export function Contacts() {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        if (name.length < 8) {
+        if (name.length < 10) {
             alert("Por favor, insira seu nome completo");
             return;
         }
@@ -118,10 +120,19 @@ export function Contacts() {
     }
     
     return (
-        <section className="contacts-container">
+        <motion.section 
+            className="contacts-container"
+            initial="hidden"
+            animate="visible"
+            variants={itemVariants}
+        >
             <h2>Envie uma mensagem para mim:</h2>
 
-            <form className='contacts-form' onSubmit={handleSubmit}>
+            <motion.form 
+                className='contacts-form'
+                onSubmit={handleSubmit}
+                variants={itemVariants}
+            >
                 <div className="container-input">
                     <p>Seu Nome Completo(Obrigatório):</p>
                     <input 
@@ -166,13 +177,22 @@ export function Contacts() {
                     required
                 />
               </div>
-                
 
-                <button type="submit" disabled={isSending}>
+            </motion.form>
+
+            <button type="submit" disabled={isSending}>
                     {isSending ? 'Enviando...' : 'Enviar'}
-                </button>
+            </button>
 
-            </form>
-        </section>
-    )
+            <footer className="contacts-footer">
+                <h3>Ou entre diretamente em contato:</h3>
+                
+                <div className="email-and-phone">
+                    <p> <i className='fa-solid fa-envelope'></i>Email: ls8294921@gmail.com </p>
+                    <p> <i className='fa-solid fa-phone'></i>Telefone: (75) 99245-9695 </p>
+                </div>
+            </footer>
+
+        </motion.section>
+    );
 }
