@@ -1,9 +1,11 @@
 import { Link, Routes, Route, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Home from './Home.tsx';
 import Projects from './Projects.tsx';
 import Skills from './Skills.tsx';
 import { Contacts } from './Contacts.tsx';
+import { headerMenuVariants } from '../animations/animations';
 
 import '../css/Header.css';
 
@@ -14,6 +16,8 @@ function Header() {
         const handleResize = () => {
             if (window.innerWidth > 630) {
                 setIsMenuOpen(true);
+            } else {
+                setIsMenuOpen(false);
             }
         };
         handleResize();
@@ -24,6 +28,12 @@ function Header() {
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+    };
+
+    const handleLinkClick = () => {
+        if (window.innerWidth <= 630) {
+            setIsMenuOpen(false);
+        }
     };
 
     return(
@@ -39,12 +49,17 @@ function Header() {
                     <div className={`bar ${isMenuOpen ? 'active' : ''}`}></div>
                 </div>
 
-                <nav className={`container-links ${isMenuOpen ? 'show' : ''}`}>
-                    <Link to="/home" onClick={() => setIsMenuOpen(false)}>Home</Link>
-                    <Link to="/projects" onClick={() => setIsMenuOpen(false)}>Projetos</Link>
-                    <Link to="/contacts" onClick={() => setIsMenuOpen(false)}>Fale Comigo</Link>
-                    <Link to="/skills" onClick={() => setIsMenuOpen(false)}>Habilidades</Link>     
-                </nav>
+                <motion.nav 
+                    className="container-links"
+                    initial="closed"
+                    animate={isMenuOpen ? "open" : "closed"}
+                    variants={headerMenuVariants}
+                >
+                    <Link to="/home" onClick={handleLinkClick}>Home</Link>
+                    <Link to="/projects" onClick={handleLinkClick}>Projetos</Link>
+                    <Link to="/contacts" onClick={handleLinkClick}>Fale Comigo</Link>
+                    <Link to="/skills" onClick={handleLinkClick}>Habilidades</Link>     
+                </motion.nav>
             </header>
 
             <Routes>

@@ -4,7 +4,6 @@ import {
     containerVariants, 
     itemVariants, 
     imageVariants, 
-    buttonVariants,
     typeAnimationConfig 
 } from '../animations/animations';
 import '../css/Home.css';
@@ -57,7 +56,7 @@ function Home() {
 
                     <motion.p variants={itemVariants}>
                         Sou um desenvolvedor Full-Stack de aplicações web em treinamento, estou buscando minha primeira oportunidade na área de tecnologia. Trabalho com sites, 
-                        landing pages e APIs Restful.
+                        landing pages e APIs REST.
                     </motion.p>
 
                     <motion.p variants={itemVariants}>
@@ -77,7 +76,6 @@ function Home() {
                             target='_blank' 
                             rel='noopener noreferrer' 
                             href="https://www.linkedin.com/in/lucas-gomes-santana-77892a343/"
-                            variants={buttonVariants}
                             whileHover="hover"
                             whileTap="tap"
                         >
@@ -88,7 +86,6 @@ function Home() {
                             target='_blank' 
                             rel='noopener noreferrer' 
                             href="https://github.com/lucas-gomes-santana"
-                            variants={buttonVariants}
                             whileHover="hover"
                             whileTap="tap"
                         >
@@ -98,6 +95,20 @@ function Home() {
                     </motion.div>
 
                 </motion.nav>
+                <motion.div 
+                    className="cv-download"
+                    variants={itemVariants}
+                >
+                    <motion.a
+                        className="download-button"
+                        href="/assets/Lucas-Gomes-Santana-Curriculo.pdf"
+                        download="Lucas-Gomes-Santana-Curriculo.pdf"
+                        whileHover="hover"
+                        whileTap="tap"
+                    >
+                        <i className="fa-solid fa-download"></i> Baixar CV
+                    </motion.a>
+                </motion.div>
 
             </motion.div>
 

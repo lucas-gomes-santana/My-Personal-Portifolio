@@ -88,6 +88,35 @@
     text-decoration: none;
 }
 
+.cv-download {
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #275adc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #4b65e6;
+    transform: translateY(-4px);
+}
+
+.download-button i {
+    font-size: 1.1rem;
+}
+
+
+
 /* Animações responsivas */
 @media (min-width: 768px) {
     .container-info {
@@ -186,5 +215,12 @@
 
     .special-link i {
         font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 490px) {
+    .download-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
     }
 }
