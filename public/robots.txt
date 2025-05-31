@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lucas-gomes-santana-portifolio.vercel.app/home/sitemap.xml 
+Sitemap: https://lucas-gomes-santana-portifolio.vercel.app/sitemap.xml 
