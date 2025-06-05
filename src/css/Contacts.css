@@ -11,7 +11,12 @@
     margin-bottom: 80px;
 }
 
-.contacts-container button {
+.contacts-container .error-message {
+    margin-bottom: 30px;
+    color: red;
+}
+
+.contacts-form button {
     cursor: pointer;
     background-color: rgb(27, 22, 195);
     border: none;
@@ -21,10 +26,9 @@
     font-size: 1.1rem;
     color: rgb(246, 246, 246);
     margin-top: 40px;
-    
 }
 
-.contacts-container button:hover {
+.contacts-form button:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease;
     cursor: pointer;
@@ -61,8 +65,8 @@
 .contacts-footer {
     display: flex;
     flex-direction: column;
-    margin-top: 70px;
-    margin-bottom: 40px;
+    margin-top: 100px;
+    margin-bottom: 50px;
     align-items: center;
 }
 
@@ -90,15 +94,12 @@
         margin-bottom: 50px;
     }
 
-    .contacts-container button {
-        width: 15%;
-        padding: 0;
+    .contacts-form button {
         font-size: 1rem;
         margin-top: 35px;
     }
 
     .contacts-form {
-        align-items: center;
         gap: 15px;
     }
 }
@@ -122,7 +123,11 @@
 }
 
 @media (max-width: 525px) {
-    .contacts-container button {
+    .contacts-container .error-message {
+        font-size: 0.8rem;
+    }
+
+    .contacts-form button {
         width: 150px;
         height: 40px;
     }
@@ -137,7 +142,7 @@
     }
 
     .contacts-footer h3 {
-        font-size: 0.9rem;
+        font-size: 0.4rem;
     }
 
     .email-and-phone p {

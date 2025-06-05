@@ -14,7 +14,7 @@ function Skills() {
             animate="visible"
             variants={containerVariants}
         >
-            <h2>Tecnologias que utilizo no dia a dia:</h2>
+            <h2>Minhas Ferramentas Principais</h2>
 
             <motion.div className="container-images" variants={itemVariants}>
                 <img src="https://raw.githubusercontent.com/devicons/devicon/ca28c779441053191ff11710fe24a9e6c23690d6/icons/html5/html5-original.svg" alt='HTML'/>

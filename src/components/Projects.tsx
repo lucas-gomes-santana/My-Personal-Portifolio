@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import '../css/Projects.css';
+import { containerVariants, itemVariants } from '../animations/animations';
 
 interface ProjectElements{
     projectImage:string;
@@ -11,26 +12,6 @@ interface ProjectElements{
 }
 
 function Projects() {
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.5
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 1.1
-            }
-        }
-    };
 
     const projectsData: ProjectElements[] = [
         {
@@ -50,7 +31,7 @@ function Projects() {
             animate="visible"
             variants={containerVariants}
         >
-            <h2>Projetos Desenvolvidos:</h2>
+            <h2>Projetos Desenvolvidos</h2>
 
             <motion.div className="project-container" variants={itemVariants} >
                 {projectsData.map((project, index) => (

@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 220px;
 }
 
 .project-container {
@@ -13,11 +13,11 @@
 }
 
 .project-container a {
-    margin-top: 20px;
+    margin-top: 55px;
 }
 
 .main-container h2 {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .card-projects {
@@ -37,13 +37,13 @@
 }
 
 .card-projects .projects-image {
-    width: 90%;
+    width: 68%;
     border-radius: 15px;
     border: 3px solid rgb(214, 145, 16);
 }
 
 .card-projects a {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 
