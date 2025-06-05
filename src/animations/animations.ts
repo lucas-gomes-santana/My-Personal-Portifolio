@@ -6,8 +6,8 @@ export const containerVariants: Variants = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 3,
-            duration: 2
+            staggerChildren: 1.1,
+            duration: 1.5
         }
     }
 };
@@ -19,7 +19,7 @@ export const itemVariants: Variants = {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 1.1
+            duration: 1
         }
     }
 };
