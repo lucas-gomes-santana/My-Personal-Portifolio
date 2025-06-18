@@ -5,7 +5,7 @@ import Home from './Home.tsx';
 import Projects from './Projects.tsx';
 import Skills from './Skills.tsx';
 import { Contacts } from './Contacts.tsx';
-import { headerMenuVariants } from '../animations/animations';
+import { headerMenuVariants, labelVariants } from '../animations/animations';
 
 import '../css/Header.css';
 
@@ -39,9 +39,14 @@ function Header() {
     return(
         <>
             <header>
-                <div className="container-name">
+                <motion.div 
+                className="container-name"
+                initial="hidden"
+                animate="visible"
+                variants={labelVariants}
+                >
                     <h3>Lucas Portifolio</h3>
-                </div>
+                </motion.div>
 
                 <div className="hamburger-menu" onClick={toggleMenu}>
                     <div className={`bar ${isMenuOpen ? 'active' : ''}`}></div>

@@ -6,7 +6,7 @@ export const containerVariants: Variants = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 3,
+            staggerChildren: 2,
             duration: 2
         }
     }
@@ -19,7 +19,7 @@ export const itemVariants: Variants = {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 1.1
+            duration: 1
         }
     }
 };
@@ -129,3 +129,18 @@ export const headerMenuVariants: Variants = {
         }
     }
 };
+
+export const labelVariants: Variants = {
+    hidden: { 
+        opacity: 0, 
+        x: -100 
+    },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 0.8,
+            ease: "easeOut"
+        }
+    }
+}

@@ -55,7 +55,7 @@ function Home() {
                     </h3>
 
                     <motion.p variants={itemVariants}>
-                        Sou um desenvolvedor Full-Stack de aplicações web em treinamento, estou buscando minha primeira oportunidade na área de tecnologia. Trabalho com sites, 
+                        Sou um desenvolvedor Full-Stack de aplicações web, estou buscando minha primeira oportunidade na área de tecnologia. Trabalho com sites, 
                         landing pages e APIs REST.
                     </motion.p>
 
@@ -101,7 +101,7 @@ function Home() {
                 >
                     <motion.a
                         className="download-button"
-                        href="/assets/Lucas-Gomes-Santana-Curriculo.pdf"
+                        href="https://drive.google.com/uc?export=download&id=1FiBpEKlcQtuCFKyTunf7BVsTslv7LUz6"
                         download="Lucas-Gomes-Santana-Curriculo.pdf"
                         whileHover="hover"
                         whileTap="tap"
