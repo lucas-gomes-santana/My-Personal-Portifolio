@@ -199,7 +199,7 @@ export function Contacts() {
                 <h3>Ou entre diretamente em contato:</h3>
                 
                 <div className="email-and-phone">
-                    <p> <i className='fa-solid fa-envelope'></i>Email: ls8294921@gmail.com </p>
+                    <p> <i className='fa-solid fa-envelope'></i>Email: lucasgomessantana259@gmail.com</p>
                     <p> <i className='fa-solid fa-phone'></i>Telefone: (75) 99245-9695 </p>
                 </div>
             </footer>
