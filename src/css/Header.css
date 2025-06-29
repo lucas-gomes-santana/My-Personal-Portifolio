@@ -1,8 +1,26 @@
 header {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
-    position: relative;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(24, 24, 24, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+}
+
+/* Estado quando o usuário fez scroll */
+header.scrolled {
+    background-color: rgba(24, 24, 24, 0.98);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    padding: 12px 20px;
 }
 
 header .container-name {
@@ -11,6 +29,12 @@ header .container-name {
 
 header .container-name h3 {
     margin-left: 10%;
+    transition: all 0.3s ease;
+}
+
+/* Efeito no nome quando scrolled */
+header.scrolled .container-name h3 {
+    transform: scale(0.95);
 }
 
 header .container-links {
@@ -21,9 +45,34 @@ header .container-links {
     transition: all 0.4s;
 }
 
-header .container-links a {
+header .container-links .nav-link {
     margin-left: 12%;
     font-size: 1.1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+header .container-links .nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+header .container-links .nav-link.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+/* Efeito nos links quando scrolled */
+header.scrolled .container-links .nav-link {
+    font-size: 1rem;
+    padding: 6px 14px;
 }
 
 .hamburger-menu {
@@ -62,7 +111,7 @@ header .container-links a {
         font-size: 1rem;
     }
 
-    header .container-links a {
+    header .container-links .nav-link {
         margin-left: 8%;
         font-size: 1rem;
     }
@@ -73,7 +122,7 @@ header .container-links a {
         font-size: 0.9rem;
     }
 
-    header .container-links a{
+    header .container-links .nav-link{
         font-size: 0.9rem;
     }
 }
@@ -81,14 +130,18 @@ header .container-links a {
 @media (max-width: 640px) {
     header {
         justify-content: flex-start;
-        margin-top: 25px;
+        padding: 10px 15px;
+    }
+
+    header.scrolled {
+        padding: 8px 15px;
     }
 
     .hamburger-menu {
         display: flex;
         position: absolute;
         right: 30px;
-        top: 25%;
+        top: 50%;
         transform: translateY(-50%);
         z-index: 10;
     }
@@ -105,9 +158,10 @@ header .container-links a {
         z-index: 5;
         margin-top: 0;
         box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.5);
+        background-color: rgba(24, 24, 24, 0.98);
     }
 
-    header .container-links a {
+    header .container-links .nav-link {
         margin: 20px 0;
         font-size: 1.2rem;
     }
@@ -124,12 +178,12 @@ header .container-links a {
 }
 
 @media (max-width:400px) {
-    header .container-links a {
+    header .container-links .nav-link {
         margin-right: 15px;
     }
 
     .hamburger-menu {
-        top: 25%;
+        top: 50%;
         z-index: 10;
     }
 

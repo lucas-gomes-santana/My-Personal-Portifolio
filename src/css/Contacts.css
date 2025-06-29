@@ -1,7 +1,6 @@
 .contacts-container {
     display: flex;
     flex-direction: column;
-    margin-top: 180px;
     justify-content: center;
     align-items: center;
 }
@@ -86,7 +85,7 @@
 @media (max-width: 1110px) {
     .contacts-container {
         flex-direction: column;
-        margin-top: 140px;
+        justify-content: center;
     }
 
     .contacts-container h2 {
@@ -106,7 +105,7 @@
 
 @media (max-width: 650px) {
     .contacts-container {
-        margin-top: 100px;
+        justify-content: center;
     }
 
     .contacts-container h2 {

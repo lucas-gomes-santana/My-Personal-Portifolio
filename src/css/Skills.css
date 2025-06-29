@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 180px;
+    min-height: 100vh;
+    justify-content: center;
 }
 
 .container-images {
@@ -16,8 +17,6 @@
     width: 115px;
     height: 85px;
 }
-
-
 
 /*Responsivity*/
 @media (max-width:1000px) {

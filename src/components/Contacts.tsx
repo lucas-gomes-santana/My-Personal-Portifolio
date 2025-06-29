@@ -129,7 +129,7 @@ export function Contacts() {
     }
     
     return (
-        <motion.section 
+        <motion.div 
             className="contacts-container"
             initial="hidden"
             animate="visible"
@@ -145,7 +145,7 @@ export function Contacts() {
                 variants={itemVariants}
             >
                 <div className="container-input">
-                    <p>Seu Nome Completo(Obrigatório):</p>
+                    <p>Nome Completo(Obrigatório):</p>
                     <input 
                         type="text" 
                         placeholder="Seu Nome" 
@@ -157,7 +157,7 @@ export function Contacts() {
                 </div>
 
                 <div className="container-input">
-                    <p>Seu Email(Obrigatório):</p> 
+                    <p>Email(Obrigatório):</p> 
                     <input 
                         type="email" 
                         placeholder="Email" 
@@ -169,7 +169,7 @@ export function Contacts() {
                 </div>
 
                 <div className="container-input">
-                    <p>Seu Número de Telefone(Opcional):</p>
+                    <p>Número de Telefone(Opcional):</p>
                     <input 
                         type="text" 
                         placeholder="Número de Telefone" 
@@ -180,7 +180,7 @@ export function Contacts() {
                 </div>
 
                 <div style={{alignItems: 'flex-start'}} className="container-input">
-                    <p>Sua Mensagem:</p> 
+                    <p>Mensagem:</p> 
                     <textarea
                         placeholder="Mensagem" 
                         value={message} 
@@ -204,6 +204,6 @@ export function Contacts() {
                 </div>
             </footer>
 
-        </motion.section>
+        </motion.div>
     );
 }
