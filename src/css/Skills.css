@@ -8,9 +8,11 @@
 
 .container-images {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 75px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 40px;
     margin-top: 65px;
+    width: 100%;
+    max-width: 900px;
 }
 
 .container-images img {
@@ -18,35 +20,70 @@
     height: 85px;
 }
 
+.skill-badge {
+    background: rgba(34, 34, 34, 0.92);
+    border-radius: 16px;
+    box-shadow: 0 2px 16px 0 rgba(39, 219, 100, 0.10), 0 1.5px 6px 0 rgba(210,224,85,0.08);
+    padding: 1.2rem 1.2rem 0.7rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
+    border: 1.5px solid rgba(39,219,100,0.13);
+}
+
+.skill-badge:hover {
+    box-shadow: 0 8px 32px 0 rgba(39,219,100,0.18), 0 4px 16px 0 rgba(210,224,85,0.13);
+    background: rgba(57, 219, 100, 0.10);
+    transform: translateY(-6px) scale(1.07);
+}
+
+.skill-badge img {
+    width: 80px;
+    height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(39,219,100,0.10));
+    transition: filter 0.3s, transform 0.3s;
+}
+
+.skill-badge:hover img {
+    filter: drop-shadow(0 4px 16px rgba(39,219,100,0.18));
+    transform: scale(1.08) rotate(-2deg);
+}
+
 /*Responsivity*/
 @media (max-width:1000px) {
     .container-skills h2{
         font-size: 1rem;
     }
+
+    .container-images {
+        gap: 30px;
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .skill-badge {
+        border-radius: 12px;
+    }
 }
 
-@media (max-width:780px) {
+@media (max-width:740px) {
     .container-images{
-        gap: 45px;
-    }
-
-    .container-images img {
-        width: 100px;
-        height: 75px;
+        gap: 20px;
     }
 }
 
-@media (max-width:620px) {
+@media (max-width:600px) {
     .container-skills h2 {
         font-size: 0.9rem;
     }
 
-    .container-images {
-        grid-template-columns: repeat(3,1fr);
+    .skill-badge {
+        padding: 1rem 1rem 0.5rem 1rem;
     }
 
-    .container-images img {
-        width: 85px;
-        height: 60px;
+    .skill-badge img {
+        width: 50px;
+        height: 30px;
     }
 }

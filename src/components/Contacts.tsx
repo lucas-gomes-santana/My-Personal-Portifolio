@@ -145,7 +145,7 @@ export function Contacts() {
                 variants={itemVariants}
             >
                 <div className="container-input">
-                    <p>Nome Completo(Obrigatório):</p>
+                    <p>Nome Completo:</p>
                     <input 
                         type="text" 
                         placeholder="Seu Nome" 
@@ -157,7 +157,7 @@ export function Contacts() {
                 </div>
 
                 <div className="container-input">
-                    <p>Email(Obrigatório):</p> 
+                    <p>Email:</p> 
                     <input 
                         type="email" 
                         placeholder="Email" 
@@ -169,7 +169,7 @@ export function Contacts() {
                 </div>
 
                 <div className="container-input">
-                    <p>Número de Telefone(Opcional):</p>
+                    <p>Telefone(Opcional):</p>
                     <input 
                         type="text" 
                         placeholder="Número de Telefone" 

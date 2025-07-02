@@ -26,24 +26,67 @@
     align-items: center;
     gap: 25px;
     width: 60%;
+    background: rgba(34, 34, 34, 0.95);
+    border-radius: 18px;
+    box-shadow: 0 4px 32px 0 rgba(0,0,0,0.18), 0 1.5px 6px 0 rgba(210,224,85,0.08);
+    padding: 2.5rem 2rem 2rem 2rem;
+    transition: box-shadow 0.3s, transform 0.3s;
+    border: 1.5px solid rgba(210,224,85,0.13);
+}
+
+.card-projects:hover {
+    box-shadow: 0 8px 40px 0 rgba(210,224,85,0.18), 0 4px 16px 0 rgba(210,224,85,0.13);
 }
 
 .card-projects h3 {
     color: rgb(210, 224, 85);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.2rem;
 }
 
 .card-projects h4 {
     color: rgb(57, 219, 100);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
 }
 
 .card-projects .projects-image {
-    width: 68%;
+    width: 70%;
     border-radius: 15px;
-    border: 3px solid rgb(214, 145, 16);
+    border: 2px solid rgb(214, 145, 16);
+    box-shadow: 0 2px 16px 0 rgba(214,145,16,0.13);
+}
+
+.card-projects p {
+    color: #e0e0e0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0.5rem 0 1.2rem 0;
+    text-align: center;
 }
 
 .card-projects a {
     margin-bottom: 50px;
+    background: linear-gradient(90deg, #d29110 0%, #39db64 100%);
+    color: #181818;
+    font-weight: 600;
+    padding: 0.7rem 1.7rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px 0 rgba(210,224,85,0.13);
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    border: none;
+    outline: none;
+    display: inline-block;
+}
+
+.card-projects a:hover {
+    background: linear-gradient(90deg, #39db64 0%, #d29110 100%);
+    color: #fff;
+    transform: scale(1.08) translateY(-2px);
 }
 
 .project-nav-wrapper {
@@ -84,60 +127,88 @@
 
 /*Responsivity*/
 @media (max-width:700px) {
-
     .main-container h2 {
         font-size: 1.3rem;
     }
-
     .main-container button {
         font-size: 0.85rem;
     }
-
     .arrow-btn {
         font-size: 1.3rem;
         padding: 0.3rem 0.7rem;
     }
-
     .project-nav-wrapper {
         min-height: 300px;
+    }
+    .card-projects {
+        width: 90%;
+        padding: 1.5rem 0.7rem 1.2rem 0.7rem;
+        border-radius: 14px;
+        gap: 18px;
+    }
+    .card-projects h3 {
+        font-size: 1.1rem;
+    }
+    .card-projects h4 {
+        font-size: 0.95rem;
+    }
+    .card-projects p {
+        font-size: 0.95rem;
+    }
+    .card-projects .projects-image {
+        width: 90%;
+        border-radius: 10px;
+    }
+    .card-projects a {
+        font-size: 0.95rem;
+        padding: 0.5rem 1.1rem;
+        border-radius: 6px;
     }
 }
 
 @media (max-width:500px) {
-
     .card-projects {
-        width: 80%;
+        width: 98%;
+        padding: 1rem 0.3rem 0.8rem 0.3rem;
+        border-radius: 10px;
+        gap: 12px;
     }
-
     .card-projects h3 {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
-
     .card-projects h4 {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
-
     .card-projects p {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
-
+    .card-projects .projects-image {
+        width: 100%;
+        border-radius: 7px;
+    }
     .card-projects a {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        padding: 0.4rem 0.7rem;
+        border-radius: 5px;
     }
-
     .arrow-btn {
         font-size: 1rem;
         padding: 0.2rem 0.5rem;
     }
-
     .project-nav-wrapper {
         min-height: 200px;
     }
 }
 
 @media (max-width:400px) {
-
     .card-projects p { 
         font-size: 0.75rem;
+    }
+    .card-projects {
+        padding: 0.7rem 0.1rem 0.5rem 0.1rem;
+        border-radius: 7px;
+    }
+    .card-projects .projects-image {
+        border-radius: 5px;
     }
 }
