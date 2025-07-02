@@ -9,12 +9,11 @@ header {
     z-index: 1000;
     background-color: rgba(24, 24, 24, 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 15px 20px;
     transition: all 0.3s ease;
 }
 
-/* Estado quando o usuário fez scroll */
+/* Efeito quando o usuário faz scroll */
 header.scrolled {
     background-color: rgba(24, 24, 24, 0.98);
     backdrop-filter: blur(15px);
@@ -32,7 +31,7 @@ header .container-name h3 {
     transition: all 0.3s ease;
 }
 
-/* Efeito no nome quando scrolled */
+/* Efeito no nome quando o usuário faz scroll */
 header.scrolled .container-name h3 {
     transform: scale(0.95);
 }
@@ -51,7 +50,7 @@ header .container-links .nav-link {
     background: none;
     border: none;
     cursor: pointer;
-    color: #333;
+    color: #7e7c7c;
     padding: 8px 16px;
     border-radius: 4px;
     transition: all 0.3s ease;
@@ -69,7 +68,7 @@ header .container-links .nav-link.active {
     font-weight: bold;
 }
 
-/* Efeito nos links quando scrolled */
+/* Efeito nos links quando o usuário faz scroll */
 header.scrolled .container-links .nav-link {
     font-size: 1rem;
     padding: 6px 14px;
@@ -105,7 +104,8 @@ header.scrolled .container-links .nav-link {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/*Responsivity*/
+
+/*Responsividade*/
 @media (max-width:1000px) {
     header .container-name h3 {
         font-size: 1rem;

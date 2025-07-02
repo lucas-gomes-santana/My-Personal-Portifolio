@@ -55,6 +55,10 @@
     height: 150px;
 }
 
+.container-input input, .contacts-form textarea {
+    background-color: rgb(24, 24, 24);
+}
+
 .container-input input {
     border: 2px solid rgb(84, 183, 118);
     border-radius: 10px;
