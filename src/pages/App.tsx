@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Header from './Header.tsx';
+import Header from '../components/Header.tsx';
 import Home from './Home.tsx';
 import Projects from './Projects.tsx';
 import Skills from './Skills.tsx';
 import { Contacts } from './Contacts.tsx';
-import { containerVariants } from '../animations/animations';
+import { containerVariants } from '../animations/containerVariants.ts';
 import '../css/App.css';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
     useEffect(() => {
         const handleScroll = () => {
             const sections = ['home', 'projects', 'skills', 'contacts'];
-            const scrollPosition = window.scrollY + 100;
+            const scrollPosition = window.scrollY + 110;
             const currentScrollY = window.scrollY;
             
             // Detectar se o usuário fez scroll

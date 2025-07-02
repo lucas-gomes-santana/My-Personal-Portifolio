@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import '../css/Projects.css';
-import { containerVariants, itemVariants } from '../animations/animations';
+import { containerVariants } from '../animations/containerVariants';
+import { itemVariants } from '../animations/itemVariants';
 import { useState } from 'react';
 
 interface ProjectElements{

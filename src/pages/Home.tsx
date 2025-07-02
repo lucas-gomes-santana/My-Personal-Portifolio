@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
-import { 
-    containerVariants, 
-    itemVariants, 
-    imageVariants, 
-    typeAnimationConfig 
-} from '../animations/animations';
 import '../css/Home.css';
+import { containerVariants } from '../animations/containerVariants';
+import { itemVariants } from '../animations/itemVariants';
+import { textVariants } from '../animations/textVariants';
+import { imageVariants } from '../animations/imageVariants';
+import { typeAnimationConfig } from '../animations/typeAnimationConfig';
+import { transitions } from '../animations/transitions';
 
 function Home() {
     return (

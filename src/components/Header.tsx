@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { headerMenuVariants, labelVariants } from '../animations/animations';
+import { headerMenuVariants } from '../animations/headerMenuVariants';
+import { labelVariants } from '../animations/labelVariants';
 
 import '../css/Header.css';
 

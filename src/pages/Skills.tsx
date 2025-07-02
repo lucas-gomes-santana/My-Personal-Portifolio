@@ -1,13 +1,10 @@
 import { motion } from 'framer-motion';
 import '../css/Skills.css';
-import { 
-    containerVariants, 
-    itemVariants,  
-} from '../animations/animations';
+import { containerVariants } from '../animations/containerVariants';
+import { itemVariants } from '../animations/itemVariants';
 
 function Skills() {
     return (
-
         <motion.section 
             className="container-skills"
             initial="hidden"

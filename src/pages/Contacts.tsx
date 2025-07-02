@@ -1,7 +1,7 @@
 import { useState } from 'react'; 
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
-import { itemVariants } from '../animations/animations';
+import { itemVariants } from '../animations/itemVariants';
 import '../css/Contacts.css';
 
 
