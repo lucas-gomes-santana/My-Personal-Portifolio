@@ -15,7 +15,7 @@ function App() {
     useEffect(() => {
         const handleScroll = () => {
             const sections = ['home', 'projects', 'skills', 'contacts'];
-            const scrollPosition = window.scrollY + 110;
+            const scrollPosition = window.scrollY + 100;
             const currentScrollY = window.scrollY;
             
             // Detectar se o usuário fez scroll
