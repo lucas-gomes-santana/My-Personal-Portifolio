@@ -101,7 +101,7 @@ function Home() {
                 >
                     <motion.a
                         className="download-button"
-                        href="https://drive.google.com/uc?export=download&id=1FiBpEKlcQtuCFKyTunf7BVsTslv7LUz6"
+                        href="https://drive.google.com/drive/folders/1llfHNR2FJ0AiV8J4iMKaoCaIWnFSXQzv?hl=pt-br"
                         download="Lucas-Gomes-Santana-Curriculo.pdf"
                         whileHover="hover"
                         whileTap="tap"
