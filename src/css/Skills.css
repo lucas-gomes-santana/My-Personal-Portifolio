@@ -15,11 +15,6 @@
     max-width: 900px;
 }
 
-.container-images img {
-    width: 115px;
-    height: 85px;
-}
-
 .skill-badge {
     background: rgba(34, 34, 34, 0.92);
     border-radius: 16px;
@@ -30,6 +25,35 @@
     justify-content: center;
     transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
     border: 1.5px solid rgba(39,219,100,0.13);
+    position: relative;
+    cursor: pointer;
+}
+
+.skill-badge::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(34, 34, 34, 0.95);
+    color: #27db64;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(39, 219, 100, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    font-weight: 500;
+}
+
+.skill-badge:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: -35px;
 }
 
 .skill-badge:hover {
@@ -38,32 +62,21 @@
     transform: translateY(-6px) scale(1.07);
 }
 
-.skill-badge img {
-    width: 80px;
-    height: 60px;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 8px rgba(39,219,100,0.10));
-    transition: filter 0.3s, transform 0.3s;
-}
 
-.skill-badge:hover img {
-    filter: drop-shadow(0 4px 16px rgba(39,219,100,0.18));
-    transform: scale(1.08) rotate(-2deg);
-}
-
-/*Responsivity*/
 @media (max-width:1000px) {
     .container-skills h2{
         font-size: 1rem;
     }
 
-    .container-images {
-        gap: 30px;
-        grid-template-columns: repeat(3,1fr);
-    }
-
     .skill-badge {
         border-radius: 12px;
+    }
+}
+
+@media (max-width: 820px) {
+    .container-images {
+        gap: 45px;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -75,15 +88,10 @@
 
 @media (max-width:600px) {
     .container-skills h2 {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .skill-badge {
         padding: 1rem 1rem 0.5rem 1rem;
-    }
-
-    .skill-badge img {
-        width: 50px;
-        height: 30px;
     }
 }

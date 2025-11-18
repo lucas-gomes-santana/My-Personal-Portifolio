@@ -53,7 +53,7 @@ function Projects() {
             animate="visible"
             variants={containerVariants}
         >
-            <h2>Projetos Desenvolvidos</h2>
+            <h2>Meus Projetos Desenvolvidos</h2>
 
             <div className="project-nav-wrapper">
                 <button 

@@ -3,10 +3,9 @@ import { TypeAnimation } from 'react-type-animation';
 import '../css/Home.css';
 import { containerVariants } from '../animations/containerVariants';
 import { itemVariants } from '../animations/itemVariants';
-import { textVariants } from '../animations/textVariants';
 import { imageVariants } from '../animations/imageVariants';
 import { typeAnimationConfig } from '../animations/typeAnimationConfig';
-import { transitions } from '../animations/transitions';
+
 
 function Home() {
     return (
@@ -99,9 +98,9 @@ function Home() {
                     className="cv-download"
                     variants={itemVariants}
                 >
-                    <motion.a
+                   <motion.a
                         className="download-button"
-                        href="https://drive.google.com/drive/folders/1llfHNR2FJ0AiV8J4iMKaoCaIWnFSXQzv?hl=pt-br"
+                        href="/documents/Lucas-Gomes-Santana-Curriculo.pdf"
                         download="Lucas-Gomes-Santana-Curriculo.pdf"
                         whileHover="hover"
                         whileTap="tap"
