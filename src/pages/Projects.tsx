@@ -8,7 +8,6 @@ interface ProjectElements{
     projectImage:string;
     title:string;
     description:string;
-    projectType:string;
     link:string;
     textLink:string;
 }
@@ -19,18 +18,23 @@ function Projects() {
         {
             title: "Site da PeuCar Automotivos",
             projectImage: "/assets/PeuCar-Website.png",
-            projectType: "Aplicação Web",
             link: "https://peucar-automotivos-ipira.vercel.app/",
-            description: "Um projeto freelance que desenvolvi para um pequeno negócio de oficina de automóveis. Consiste em um site simples que permite ao usuário ver sobre os serviços da oficina e também enviar uma mensagem diretamente para o Email do proprietário da oficina.",
+            description: "Projeto freelance que desenvolvi para um pequeno negócio de oficina de automóveis. Consiste em um site simples que permite ao usuário ver sobre os serviços da oficina e também enviar uma mensagem diretamente para o Email do proprietário da oficina.",
             textLink: "Ir para o Site",
         },
         {
             title: "Curriculum Generator",
             projectImage: "/assets/Curriculum-Generator.png",
-            projectType: "Aplicação Micro-Saas",
             link: "https://curriculum-generator-5ioo8q7ai-lucas-gomes-santanas-projects.vercel.app/login",
-            description: "Uma aplicação web com objetivo de se tornar um micro SaaS no futuro. Permite ao usuário criar um currículo personalizado com base em suas informações e experiências profissionais, além de poder baixar o currículo em PDF e salvá-lo Online na própria plataforma",
+            description: "Aplicativo web que foi feito para simular um MVP Micro-Saas. Permite ao usuário criar um currículo personalizado com base em suas informações e experiências profissionais, além de poder baixar o currículo em PDF e salvá-lo Online na própria plataforma. Dentre outras ações que é possível realizar.",
             textLink: "Ir para o App",
+        },
+        {
+            title: "C.E.R.F (Cadastro Escolar com Reconhecimento Facial)",
+            projectImage: "/assets/C.E.R.F.png",
+            link: "#",
+            description: "Sistema de cadastro e autenticação biométrica facial para escolas. Possui o objetivo de reforçar a segurança escolar, tendo controle do fluxo de entrada de pessoas dentro do prédio acadêmico, decidindo quem pode ou não pode entrar consultando o banco de dados para verificar se o rosto escaneado pela câmera já foi cadastrado.",
+            textLink: "Projeto Privado"
         }
     ];
 
@@ -53,7 +57,7 @@ function Projects() {
             animate="visible"
             variants={containerVariants}
         >
-            <h2>Meus Projetos Desenvolvidos</h2>
+            <h2>Meus Projetos Principais</h2>
 
             <div className="project-nav-wrapper">
                 <button 
@@ -63,15 +67,16 @@ function Projects() {
                 >
                     &#8592;
                 </button>
+
                 <motion.div className="project-container" variants={itemVariants} >
                     <div className="card-projects">
                         <h3>{project.title}</h3>
-                        <h4>{project.projectType}</h4>
                         <img className="projects-image" src={project.projectImage} alt={project.title} />
                         <p>{project.description}</p>
                         <a rel='noopener noreferrer' target='_blank' href={project.link}>{project.textLink}</a>
                     </div>
                 </motion.div>
+                
                 <button 
                     onClick={handleNext} 
                     className="arrow-btn right"

@@ -3,31 +3,32 @@ import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { itemVariants } from '../animations/itemVariants';
 import '../css/Contacts.css';
+import RequiredField from '../components/RequiredFieldLabel';
 
 
+// Formatação apenas para celulares no padrão de números brasileiros
 function formatPhoneNumber(value: string): string {
-    let formattedValue = value.replace(/\D/g, '');
-    
-    if (formattedValue.length > 0) {
-        if (formattedValue.length <= 2) {
-            formattedValue = `(${formattedValue}`;
-        } 
+    let digits = value.replace(/\D/g, '');
 
-        else if (formattedValue.length <= 7) {
-            formattedValue = `(${formattedValue.slice(0, 2)}) ${formattedValue.slice(2)}`;
-        } 
+    digits = digits.slice(0, 11);
 
-        else if (formattedValue.length <= 11) {
-            formattedValue = `(${formattedValue.slice(0, 2)}) ${formattedValue.slice(2, 7)}-${formattedValue.slice(7)}`;
-        } 
+    if (digits.length === 0) return "";
 
-        else {
-            formattedValue = `(${formattedValue.slice(0, 2)}) ${formattedValue.slice(2, 7)}-${formattedValue.slice(7, 11)}`;
-        }
+    if (digits.length <= 2) {
+        return `(${digits}`;
     }
-    
-    return formattedValue;
+
+    if (digits.length <= 3) {
+        return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+    }
+
+    if (digits.length <= 7) {
+        return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}`;
+    }
+
+    return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
 }
+
 
 function validateEmail(email: string): boolean {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -145,7 +146,7 @@ export function Contacts() {
                 variants={itemVariants}
             >
                 <div className="container-input">
-                    <p>Nome Completo:</p>
+                    <p>Nome <RequiredField> *</RequiredField> :</p>
                     <input 
                         type="text" 
                         placeholder="Seu Nome" 
@@ -157,7 +158,7 @@ export function Contacts() {
                 </div>
 
                 <div className="container-input">
-                    <p>Email:</p> 
+                    <p>Email <RequiredField> *</RequiredField> :</p> 
                     <input 
                         type="email" 
                         placeholder="Email" 
@@ -169,7 +170,7 @@ export function Contacts() {
                 </div>
 
                 <div className="container-input">
-                    <p>Telefone(Opcional):</p>
+                    <p>Telefone :</p>
                     <input 
                         type="text" 
                         placeholder="Número de Telefone" 
@@ -180,7 +181,7 @@ export function Contacts() {
                 </div>
 
                 <div style={{alignItems: 'flex-start'}} className="container-input">
-                    <p>Mensagem:</p> 
+                    <p>Mensagem <RequiredField> *</RequiredField> :</p> 
                     <textarea
                         placeholder="Mensagem" 
                         value={message} 
@@ -191,7 +192,7 @@ export function Contacts() {
                 </div>
 
                 <button type="submit" disabled={isSending}>
-                    {isSending ? 'Enviando...' : 'Enviar'}
+                    {isSending ? 'Enviando...' : 'Enviar Mensagem'}
                 </button>
             </motion.form>
 

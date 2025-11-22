@@ -64,10 +64,6 @@
 
 
 @media (max-width:1000px) {
-    .container-skills h2{
-        font-size: 1rem;
-    }
-
     .skill-badge {
         border-radius: 12px;
     }

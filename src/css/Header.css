@@ -13,13 +13,12 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Efeito quando o usuário faz scroll */
 header.scrolled {
     background-color: rgba(24, 24, 24, 0.98);
     backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-    padding: 12px 20px;
+    padding: 20px 20px 20px 20px;
 }
 
 header .container-name {
@@ -29,11 +28,6 @@ header .container-name {
 header .container-name h3 {
     margin-left: 10%;
     transition: all 0.3s ease;
-}
-
-/* Efeito no nome quando o usuário faz scroll */
-header.scrolled .container-name h3 {
-    transform: scale(0.95);
 }
 
 header .container-links {
@@ -68,12 +62,6 @@ header .container-links .nav-link.active {
     font-weight: bold;
 }
 
-/* Efeito nos links quando o usuário faz scroll */
-header.scrolled .container-links .nav-link {
-    font-size: 1rem;
-    padding: 6px 14px;
-}
-
 .hamburger-menu {
     display: none;
     cursor: pointer;
@@ -105,7 +93,7 @@ header.scrolled .container-links .nav-link {
 }
 
 
-/*Responsividade*/
+
 @media (max-width:1000px) {
     header .container-name h3 {
         font-size: 1rem;
@@ -117,13 +105,18 @@ header.scrolled .container-links .nav-link {
     }
 }
 
-@media (max-width:730px) {
+@media (max-width:740px) {
     header .container-name h3 {
         font-size: 0.9rem;
     }
 
+    header .container-links {
+        gap: 0;
+    }
+
     header .container-links .nav-link{
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        margin-left: 5%;
     }
 }
 
@@ -131,10 +124,6 @@ header.scrolled .container-links .nav-link {
     header {
         justify-content: flex-start;
         padding: 10px 15px;
-    }
-
-    header.scrolled {
-        padding: 8px 15px;
     }
 
     .hamburger-menu {

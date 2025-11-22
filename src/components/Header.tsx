@@ -16,7 +16,7 @@ function Header({ activeSection, onSectionChange, isScrolled }: HeaderProps) {
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth > 630) {
+            if (window.innerWidth > 640) {
                 setIsMenuOpen(true);
             } else {
                 setIsMenuOpen(false);
@@ -34,16 +34,16 @@ function Header({ activeSection, onSectionChange, isScrolled }: HeaderProps) {
 
     const handleLinkClick = (sectionId: string) => {
         onSectionChange(sectionId);
-        if (window.innerWidth <= 630) {
+        if (window.innerWidth <= 640) {
             setIsMenuOpen(false);
         }
     };
 
     const navItems = [
-        { id: 'home', label: 'Home' },
+        { id: 'home', label: 'Sobre Mim' },
         { id: 'projects', label: 'Projetos' },
+        { id: 'skills', label: 'Habilidades' },
         { id: 'contacts', label: 'Fale Comigo' },
-        { id: 'skills', label: 'Habilidades' }
     ];
 
     return(

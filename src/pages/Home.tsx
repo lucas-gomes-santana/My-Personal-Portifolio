@@ -37,7 +37,7 @@ function Home() {
                     variants={itemVariants}
                 >
                     <h3>
-                        Olá! Meu nome é Lucas Gomes Santana. Eu sou um{' '}
+                        Olá! Meu nome é Lucas Gomes Santana. Eu sou{' '}
                         <motion.span 
                             id='special-word'
                             animate={{ 
@@ -54,8 +54,8 @@ function Home() {
                     </h3>
 
                     <motion.p variants={itemVariants}>
-                        Sou um desenvolvedor Full-Stack de aplicações web, estou buscando minha primeira oportunidade na área de tecnologia. Trabalho com sites, 
-                        landing pages e APIs REST.
+                        Sou um estudante autodidata de programação e desenvolvedor Full-Stack de aplicações web em formação, estou buscando minha primeira oportunidade na área de tecnologia. Trabalho com sites, 
+                        landing pages e APIs REST. Também tenho experiência com bibliotecas de reconhecimento facial
                     </motion.p>
 
                     <motion.p variants={itemVariants}>
@@ -68,7 +68,6 @@ function Home() {
                     className='container-personal-icons'
                     variants={itemVariants}
                 >
-                    <h4>Meu Linkedin e GitHub:</h4>
                     <motion.div className="social-links">
                         <motion.a 
                             className='special-link' 
@@ -80,6 +79,7 @@ function Home() {
                         >
                             <i className='fa-brands fa-linkedin'></i> 
                         </motion.a>
+
                         <motion.a 
                             className='special-link' 
                             target='_blank' 
@@ -91,23 +91,19 @@ function Home() {
                             <i className='fa-brands fa-github'></i> 
                         </motion.a>
 
+                         <motion.a
+                            className="download-button"
+                            href="/documents/Lucas-Gomes-Santana-Curriculo.pdf"
+                            download="Lucas-Gomes-Santana-Curriculo.pdf"
+                            whileHover="hover"
+                            whileTap="tap"
+                        >
+                            <i className="fa-solid fa-download"></i> Baixar CV
+                        </motion.a>
+
                     </motion.div>
 
                 </motion.nav>
-                <motion.div 
-                    className="cv-download"
-                    variants={itemVariants}
-                >
-                   <motion.a
-                        className="download-button"
-                        href="/documents/Lucas-Gomes-Santana-Curriculo.pdf"
-                        download="Lucas-Gomes-Santana-Curriculo.pdf"
-                        whileHover="hover"
-                        whileTap="tap"
-                    >
-                        <i className="fa-solid fa-download"></i> Baixar CV
-                    </motion.a>
-                </motion.div>
 
             </motion.div>
 
