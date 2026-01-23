@@ -59,10 +59,12 @@ const translations = {
       text: "Sou Desenvolvedor de Software autodidata e estou buscando minha primeira oportunidade na área de tecnologia. Trabalho com sites, landing pages, APIs REST e outros tipos de aplicações. Tenho experiência com projetos freelancer, projetos acadêmicos e projetos open source no GitHub, contribuindo atualmente nos repositórios do VsCode e Vite.",
       services: "Serviços",
       servicesList: [
-        "Prototipação de aplicações",
+        "Prototipação de novas aplicações",
         "Desenvolvimento de aplicações web completas",
         "Criação e testes de APIs RESTful",
         "Desenvolvimento de interfaces responsivas",
+        "Auxílio na modelagem de bancos de dados",
+        "Manuntenção em projetos já existentes ou legados",
       ],
       downloadCV: "Baixar Currículo",
     },
@@ -109,13 +111,15 @@ const translations = {
     },
     about: {
       title: "About Me",
-      text: "I am a software developer passionate about creating innovative and elegant solutions. With over 5 years of experience in web development, I specialize in building modern and responsive applications using the latest technologies in the market. My journey began with the curiosity to understand how things work, and today I transform that curiosity into digital products that make a difference in people's lives.",
+      text: "I am a self-taught Software Developer seeking my first opportunity in the technology field. I work with websites, landing pages, REST APIs, and other types of applications. I have experience with freelance projects, academic projects, and open source projects on GitHub, currently contributing to the VsCode and Vite repositories.",
       services: "Services",
       servicesList: [
+        "Prototyping new applications",
         "Complete web application development",
-        "RESTful and GraphQL API creation",
+        "RESTful API creation and testing",
         "Responsive interface development",
-        "Software architecture consulting",
+        "Database modeling assistance",
+        "Maintenance of existing or legacy projects",
       ],
       downloadCV: "Download Resume",
     },
@@ -162,13 +166,15 @@ const translations = {
     },
     about: {
       title: "Sobre Mí",
-      text: "Soy un desarrollador de software apasionado por crear soluciones innovadoras y elegantes. Con más de 5 años de experiencia en desarrollo web, me especializo en construir aplicaciones modernas y responsivas utilizando las tecnologías más recientes del mercado. Mi viaje comenzó con la curiosidad de entender cómo funcionan las cosas, y hoy transformo esa curiosidad en productos digitales que marcan la diferencia en la vida de las personas.",
+      text: "Soy Desarrollador de Software autodidacta y estoy buscando mi primera oportunidad en el área de tecnología. Trabajo con sitios web, landing pages, APIs REST y otros tipos de aplicaciones. Tengo experiencia con proyectos freelance, proyectos académicos y proyectos open source en GitHub, contribuyendo actualmente en los repositorios de VsCode y Vite.",
       services: "Servicios",
       servicesList: [
+        "Prototipado de nuevas aplicaciones",
         "Desarrollo de aplicaciones web completas",
-        "Creación de APIs RESTful y GraphQL",
+        "Creación y pruebas de APIs RESTful",
         "Desarrollo de interfaces responsivas",
-        "Consultoría en arquitectura de software",
+        "Ayuda en el modelado de bases de datos",
+        "Mantenimiento de proyectos existentes o legacy",
       ],
       downloadCV: "Descargar CV",
     },
@@ -208,15 +214,15 @@ const projectsData = {
     {
       title: "Site da PeuCar Automotivos",
       description:
-        "Projeto freelance que desenvolvi para um pequeno negócio de oficina de automóveis. ",
-      tools: ["HTML5", "CSS3", "Javascript", "Vercel"],
+        "Projeto freelance que desenvolvi para um pequeno negócio de oficina de automóveis.",
+      tools: ["HTML5", "CSS3", "Javascript", "NodeJs", "Vercel"],
       image: "/PeuCar-Website.png",
     },
     {
       title: "Curriculum Generator",
       description:
         "Aplicativo web que foi feito para simular um MVP Micro-Saas. Permite ao usuário criar um currículo personalizado com base em suas informações profissionais.",
-      tools: ["React", "JavaScript", "CSS3"],
+      tools: ["React", "JavaScript", "CSS3", "Vercel"],
       image:
         "https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?w=600&h=400&fit=crop",
     },
@@ -231,108 +237,70 @@ const projectsData = {
       title: "Curriculum Generator Saas Version",
       description:
         "Versão aprimorada do projeto Curriculum Generator, com edição de currículos salvos no app, suporte aos clientes, assinatura de planos e muito mais.",
-      tools: ["NextJs", "Typescript", "TailwindCSS", "MongoDB"],
+      tools: ["NextJs", "Typescript", "TailwindCSS", "MongoDB", "Vercel"],
       image: "CG-Saas-Version.png",
     },
   ],
   en: [
     {
-      title: "Scientific Calculator",
+      title: "PeuCar Automotive Website",
       description:
-        "A complete scientific calculator with a modern and intuitive interface. Supports basic, trigonometric, logarithmic operations and more.",
-      tools: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-      image:
-        "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=600&h=400&fit=crop",
+        "Freelance project I developed for a small automotive workshop business.",
+      tools: ["HTML5", "CSS3", "Javascript", "NodeJs", "Vercel"],
+      image: "/PeuCar-Website.png",
     },
     {
-      title: "Pokédex",
+      title: "Curriculum Generator",
       description:
-        "Web application that consumes the PokéAPI to display detailed information about all Pokémon, including stats, types and evolutions.",
-      tools: ["React", "JavaScript", "CSS3", "REST API"],
+        "Web application made to simulate a Micro-Saas MVP. Allows users to create a personalized resume based on their professional information.",
+      tools: ["React", "JavaScript", "CSS3", "Vercel"],
       image:
         "https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?w=600&h=400&fit=crop",
     },
     {
-      title: "Task Manager Pro",
+      title: "C.E.R.F (School Registration with Facial Recognition)",
       description:
-        "Complete task management system with authentication, categories, priorities and real-time notifications.",
-      tools: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
-      image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+        "Facial biometric registration and authentication system for schools. Aims to enhance security by blocking unauthorized access.",
+      tools: ["React", "Javascript", "Typescript", "Express", "TailwindCSS"],
+      image: "CERF.png",
     },
     {
-      title: "E-commerce Dashboard",
+      title: "Curriculum Generator Saas Version",
       description:
-        "Admin panel for online stores with interactive charts, product management and sales analytics.",
-      tools: ["React", "Node.js", "MongoDB", "Chart.js"],
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-    },
-    {
-      title: "Weather App",
-      description:
-        "Weather forecast app with geolocation, 7-day forecast and weather alerts.",
-      tools: ["React", "TypeScript", "OpenWeather API", "Tailwind"],
-      image:
-        "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600&h=400&fit=crop",
-    },
-    {
-      title: "Real-time Chat",
-      description:
-        "Real-time chat application with rooms, private messages and file sharing.",
-      tools: ["React", "Socket.io", "Node.js", "MongoDB"],
-      image:
-        "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=600&h=400&fit=crop",
+        "Enhanced version of the Curriculum Generator project, with editing of saved resumes in the app, customer support, plan subscriptions and much more.",
+      tools: ["NextJs", "Typescript", "TailwindCSS", "MongoDB", "Vercel"],
+      image: "CG-Saas-Version.png",
     },
   ],
   es: [
     {
-      title: "Calculadora Científica",
+      title: "Sitio Web de PeuCar Automotriz",
       description:
-        "Una calculadora científica completa con interfaz moderna e intuitiva. Soporta operaciones básicas, trigonométricas, logarítmicas y más.",
-      tools: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-      image:
-        "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=600&h=400&fit=crop",
+        "Proyecto freelance que desarrollé para un pequeño negocio de taller automotriz.",
+      tools: ["HTML5", "CSS3", "Javascript", "NodeJs", "Vercel"],
+      image: "/PeuCar-Website.png",
     },
     {
-      title: "Pokédex",
+      title: "Curriculum Generator",
       description:
-        "Aplicación web que consume la PokéAPI para mostrar información detallada sobre todos los Pokémon, incluyendo stats, tipos y evoluciones.",
-      tools: ["React", "JavaScript", "CSS3", "REST API"],
+        "Aplicación web hecha para simular un MVP Micro-Saas. Permite al usuario crear un currículum personalizado basado en su información profesional.",
+      tools: ["React", "JavaScript", "CSS3", "Vercel"],
       image:
         "https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?w=600&h=400&fit=crop",
     },
     {
-      title: "Task Manager Pro",
+      title: "C.E.R.F (Registro Escolar con Reconocimiento Facial)",
       description:
-        "Sistema completo de gestión de tareas con autenticación, categorías, prioridades y notificaciones en tiempo real.",
-      tools: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
-      image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+        "Sistema de registro y autenticación biométrica facial para escuelas. Tiene como objetivo reforzar la seguridad bloqueando el acceso no autorizado.",
+      tools: ["React", "Javascript", "Typescript", "Express", "TailwindCSS"],
+      image: "CERF.png",
     },
     {
-      title: "E-commerce Dashboard",
+      title: "Curriculum Generator Versión Saas",
       description:
-        "Panel administrativo para tiendas virtuales con gráficos interactivos, gestión de productos y análisis de ventas.",
-      tools: ["React", "Node.js", "MongoDB", "Chart.js"],
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-    },
-    {
-      title: "Weather App",
-      description:
-        "Aplicación de pronóstico del tiempo con geolocalización, pronóstico de 7 días y alertas meteorológicas.",
-      tools: ["React", "TypeScript", "OpenWeather API", "Tailwind"],
-      image:
-        "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600&h=400&fit=crop",
-    },
-    {
-      title: "Chat en Tiempo Real",
-      description:
-        "Aplicación de chat en tiempo real con salas, mensajes privados y compartición de archivos.",
-      tools: ["React", "Socket.io", "Node.js", "MongoDB"],
-      image:
-        "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=600&h=400&fit=crop",
+        "Versión mejorada del proyecto Curriculum Generator, con edición de currículums guardados en la app, soporte a clientes, suscripción de planes y mucho más.",
+      tools: ["NextJs", "Typescript", "TailwindCSS", "MongoDB", "Vercel"],
+      image: "CG-Saas-Version.png",
     },
   ],
 };
@@ -927,7 +895,7 @@ const Index = () => {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="mailto:contato@email.com"
+                href="lucasgomessantana259@gmail.com"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="w-5 h-5" />
