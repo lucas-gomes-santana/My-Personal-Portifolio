@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   HTML5,
   CSS3,
@@ -17,331 +17,349 @@ import {
   ViteJS,
   NextJs,
   MongoDB,
-} from 'developer-icons';
-import { 
-  Moon, 
-  Sun, 
-  Menu, 
-  X, 
-  ChevronDown, 
+  MySQL,
+  VercelDark,
+  Sass,
+} from "developer-icons";
+import {
+  Moon,
+  Sun,
+  Menu,
+  X,
+  ChevronDown,
   ChevronUp,
-  Linkedin, 
-  Github, 
-  Download, 
-  Mail, 
-  Phone, 
-  User, 
+  Linkedin,
+  Github,
+  Download,
+  Mail,
+  Phone,
+  User,
   MessageSquare,
   ExternalLink,
-  Globe
-} from 'lucide-react';
+  Globe,
+} from "lucide-react";
 
 // Translations
 const translations = {
-  'pt-BR': {
+  "pt-BR": {
     nav: {
-      about: 'Sobre',
-      projects: 'Projetos',
-      skills: 'Habilidades',
-      contact: 'Contato',
+      about: "Sobre",
+      projects: "Projetos",
+      skills: "Habilidades",
+      contact: "Contato",
     },
     hero: {
-      greeting: 'Olá, eu sou',
-      name: 'João Silva',
-      role: 'Desenvolvedor Full Stack',
-      description: 'Transformando ideias em experiências digitais incríveis',
+      greeting: "Olá, eu sou",
+      name: "Lucas Gomes",
+      role: "Desenvolvedor Full Stack",
+      description: "Transformando ideias em experiências digitais incríveis",
     },
     about: {
-      title: 'Sobre Mim',
-      text: 'Sou um desenvolvedor de software apaixonado por criar soluções inovadoras e elegantes. Com mais de 5 anos de experiência no desenvolvimento web, especializo-me em construir aplicações modernas e responsivas utilizando as tecnologias mais recentes do mercado. Minha jornada começou com a curiosidade de entender como as coisas funcionam, e hoje transformo essa curiosidade em produtos digitais que fazem a diferença na vida das pessoas.',
-      services: 'Serviços',
+      title: "Sobre Mim",
+      text: "Sou Desenvolvedor de Software autodidata e estou buscando minha primeira oportunidade na área de tecnologia. Trabalho com sites, landing pages, APIs REST e outros tipos de aplicações. Tenho experiência com projetos freelancer, projetos acadêmicos e projetos open source no GitHub, contribuindo atualmente nos repositórios do VsCode e Vite.",
+      services: "Serviços",
       servicesList: [
-        'Desenvolvimento de aplicações web completas',
-        'Criação de APIs RESTful e GraphQL',
-        'Desenvolvimento de interfaces responsivas',
-        'Consultoria em arquitetura de software',
+        "Prototipação de aplicações",
+        "Desenvolvimento de aplicações web completas",
+        "Criação e testes de APIs RESTful",
+        "Desenvolvimento de interfaces responsivas",
       ],
-      downloadCV: 'Baixar Currículo',
+      downloadCV: "Baixar Currículo",
     },
     projects: {
-      title: 'Projetos',
-      viewMore: 'Ver Mais',
-      viewLess: 'Ver Menos',
-      viewProject: 'Ver Projeto',
-      tools: 'Ferramentas',
+      title: "Projetos",
+      viewMore: "Ver Mais",
+      viewLess: "Ver Menos",
+      viewProject: "Ver Projeto",
+      tools: "Ferramentas",
     },
     skills: {
-      title: 'Habilidades',
-      subtitle: 'Tecnologias que domino',
+      title: "Habilidades",
+      subtitle: "Tecnologias que domino",
     },
     contact: {
-      title: 'Contato',
-      subtitle: 'Vamos trabalhar juntos?',
-      name: 'Nome Completo',
-      email: 'Email',
-      phone: 'Telefone',
-      message: 'Mensagem',
-      send: 'Enviar Mensagem',
-      namePlaceholder: 'Seu nome completo',
-      emailPlaceholder: 'seu@email.com',
-      phonePlaceholder: '(00) 00000-0000',
-      messagePlaceholder: 'Escreva sua mensagem aqui...',
+      title: "Contato",
+      subtitle: "Vamos trabalhar juntos?",
+      name: "Nome Completo",
+      email: "Email",
+      phone: "Telefone",
+      message: "Mensagem",
+      send: "Enviar Mensagem",
+      namePlaceholder: "Seu nome completo",
+      emailPlaceholder: "seu@email.com",
+      phonePlaceholder: "(00) 00000-0000",
+      messagePlaceholder: "Escreva sua mensagem aqui...",
     },
     footer: {
-      rights: 'Todos os direitos reservados.',
+      rights: "Todos os direitos reservados.",
     },
   },
-  'en': {
+  en: {
     nav: {
-      about: 'About',
-      projects: 'Projects',
-      skills: 'Skills',
-      contact: 'Contact',
+      about: "About",
+      projects: "Projects",
+      skills: "Skills",
+      contact: "Contact",
     },
     hero: {
-      greeting: 'Hello, I am',
-      name: 'João Silva',
-      role: 'Full Stack Developer',
-      description: 'Transforming ideas into amazing digital experiences',
+      greeting: "Hello, I am",
+      name: "Lucas Gomes",
+      role: "Full Stack Developer",
+      description: "Transforming ideas into amazing digital experiences",
     },
     about: {
-      title: 'About Me',
-      text: 'I am a software developer passionate about creating innovative and elegant solutions. With over 5 years of experience in web development, I specialize in building modern and responsive applications using the latest technologies in the market. My journey began with the curiosity to understand how things work, and today I transform that curiosity into digital products that make a difference in people\'s lives.',
-      services: 'Services',
+      title: "About Me",
+      text: "I am a software developer passionate about creating innovative and elegant solutions. With over 5 years of experience in web development, I specialize in building modern and responsive applications using the latest technologies in the market. My journey began with the curiosity to understand how things work, and today I transform that curiosity into digital products that make a difference in people's lives.",
+      services: "Services",
       servicesList: [
-        'Complete web application development',
-        'RESTful and GraphQL API creation',
-        'Responsive interface development',
-        'Software architecture consulting',
+        "Complete web application development",
+        "RESTful and GraphQL API creation",
+        "Responsive interface development",
+        "Software architecture consulting",
       ],
-      downloadCV: 'Download Resume',
+      downloadCV: "Download Resume",
     },
     projects: {
-      title: 'Projects',
-      viewMore: 'View More',
-      viewLess: 'View Less',
-      viewProject: 'View Project',
-      tools: 'Tools',
+      title: "Projects",
+      viewMore: "View More",
+      viewLess: "View Less",
+      viewProject: "View Project",
+      tools: "Tools",
     },
     skills: {
-      title: 'Skills',
-      subtitle: 'Technologies I master',
+      title: "Skills",
+      subtitle: "Technologies I master",
     },
     contact: {
-      title: 'Contact',
-      subtitle: 'Let\'s work together?',
-      name: 'Full Name',
-      email: 'Email',
-      phone: 'Phone',
-      message: 'Message',
-      send: 'Send Message',
-      namePlaceholder: 'Your full name',
-      emailPlaceholder: 'your@email.com',
-      phonePlaceholder: '+1 (000) 000-0000',
-      messagePlaceholder: 'Write your message here...',
+      title: "Contact",
+      subtitle: "Let's work together?",
+      name: "Full Name",
+      email: "Email",
+      phone: "Phone",
+      message: "Message",
+      send: "Send Message",
+      namePlaceholder: "Your full name",
+      emailPlaceholder: "your@email.com",
+      phonePlaceholder: "+1 (000) 000-0000",
+      messagePlaceholder: "Write your message here...",
     },
     footer: {
-      rights: 'All rights reserved.',
+      rights: "All rights reserved.",
     },
   },
-  'es': {
+  es: {
     nav: {
-      about: 'Sobre',
-      projects: 'Proyectos',
-      skills: 'Habilidades',
-      contact: 'Contacto',
+      about: "Sobre",
+      projects: "Proyectos",
+      skills: "Habilidades",
+      contact: "Contacto",
     },
     hero: {
-      greeting: 'Hola, soy',
-      name: 'João Silva',
-      role: 'Desarrollador Full Stack',
-      description: 'Transformando ideas en experiencias digitales increíbles',
+      greeting: "Hola, soy",
+      name: "Lucas Gomes",
+      role: "Desarrollador Full Stack",
+      description: "Transformando ideas en experiencias digitales increíbles",
     },
     about: {
-      title: 'Sobre Mí',
-      text: 'Soy un desarrollador de software apasionado por crear soluciones innovadoras y elegantes. Con más de 5 años de experiencia en desarrollo web, me especializo en construir aplicaciones modernas y responsivas utilizando las tecnologías más recientes del mercado. Mi viaje comenzó con la curiosidad de entender cómo funcionan las cosas, y hoy transformo esa curiosidad en productos digitales que marcan la diferencia en la vida de las personas.',
-      services: 'Servicios',
+      title: "Sobre Mí",
+      text: "Soy un desarrollador de software apasionado por crear soluciones innovadoras y elegantes. Con más de 5 años de experiencia en desarrollo web, me especializo en construir aplicaciones modernas y responsivas utilizando las tecnologías más recientes del mercado. Mi viaje comenzó con la curiosidad de entender cómo funcionan las cosas, y hoy transformo esa curiosidad en productos digitales que marcan la diferencia en la vida de las personas.",
+      services: "Servicios",
       servicesList: [
-        'Desarrollo de aplicaciones web completas',
-        'Creación de APIs RESTful y GraphQL',
-        'Desarrollo de interfaces responsivas',
-        'Consultoría en arquitectura de software',
+        "Desarrollo de aplicaciones web completas",
+        "Creación de APIs RESTful y GraphQL",
+        "Desarrollo de interfaces responsivas",
+        "Consultoría en arquitectura de software",
       ],
-      downloadCV: 'Descargar CV',
+      downloadCV: "Descargar CV",
     },
     projects: {
-      title: 'Proyectos',
-      viewMore: 'Ver Más',
-      viewLess: 'Ver Menos',
-      viewProject: 'Ver Proyecto',
-      tools: 'Herramientas',
+      title: "Proyectos",
+      viewMore: "Ver Más",
+      viewLess: "Ver Menos",
+      viewProject: "Ver Proyecto",
+      tools: "Herramientas",
     },
     skills: {
-      title: 'Habilidades',
-      subtitle: 'Tecnologías que domino',
+      title: "Habilidades",
+      subtitle: "Tecnologías que domino",
     },
     contact: {
-      title: 'Contacto',
-      subtitle: '¿Trabajamos juntos?',
-      name: 'Nombre Completo',
-      email: 'Correo Electrónico',
-      phone: 'Teléfono',
-      message: 'Mensaje',
-      send: 'Enviar Mensaje',
-      namePlaceholder: 'Tu nombre completo',
-      emailPlaceholder: 'tu@email.com',
-      phonePlaceholder: '+34 000 000 000',
-      messagePlaceholder: 'Escribe tu mensaje aquí...',
+      title: "Contacto",
+      subtitle: "¿Trabajamos juntos?",
+      name: "Nombre Completo",
+      email: "Correo Electrónico",
+      phone: "Teléfono",
+      message: "Mensaje",
+      send: "Enviar Mensaje",
+      namePlaceholder: "Tu nombre completo",
+      emailPlaceholder: "tu@email.com",
+      phonePlaceholder: "+34 000 000 000",
+      messagePlaceholder: "Escribe tu mensaje aquí...",
     },
     footer: {
-      rights: 'Todos los derechos reservados.',
+      rights: "Todos los derechos reservados.",
     },
   },
 };
 
 // Projects data
 const projectsData = {
-  'pt-BR': [
+  "pt-BR": [
     {
-      title: 'Calculadora Científica',
-      description: 'Uma calculadora científica completa com interface moderna e intuitiva. Suporta operações básicas, trigonométricas, logarítmicas e muito mais.',
-      tools: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-      image: 'https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=600&h=400&fit=crop',
+      title: "Site da PeuCar Automotivos",
+      description:
+        "Projeto freelance que desenvolvi para um pequeno negócio de oficina de automóveis. ",
+      tools: ["HTML5", "CSS3", "Javascript", "Vercel"],
+      image: "/PeuCar-Website.png",
     },
     {
-      title: 'Pokédex',
-      description: 'Aplicação web que consome a PokéAPI para exibir informações detalhadas sobre todos os Pokémon, incluindo stats, tipos e evoluções.',
-      tools: ['React', 'JavaScript', 'CSS3', 'REST API'],
-      image: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?w=600&h=400&fit=crop',
+      title: "Curriculum Generator",
+      description:
+        "Aplicativo web que foi feito para simular um MVP Micro-Saas. Permite ao usuário criar um currículo personalizado com base em suas informações profissionais.",
+      tools: ["React", "JavaScript", "CSS3"],
+      image:
+        "https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?w=600&h=400&fit=crop",
     },
     {
-      title: 'Task Manager Pro',
-      description: 'Sistema completo de gerenciamento de tarefas com autenticação, categorias, prioridades e notificações em tempo real.',
-      tools: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma'],
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop',
+      title: "C.E.R.F (Cadastro Escolar com Reconhecimento Facial)",
+      description:
+        "Sistema de cadastro e autenticação biométrica facial para escolas. Possui o objetivo de reforçar a segurança bloqueando acesso não autorizado.",
+      tools: ["React", "Javascript", "Typescript", "Express", "TailwindCSS"],
+      image: "CERF.png",
     },
     {
-      title: 'E-commerce Dashboard',
-      description: 'Painel administrativo para lojas virtuais com gráficos interativos, gestão de produtos e análise de vendas.',
-      tools: ['React', 'Node.js', 'MongoDB', 'Chart.js'],
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
-    },
-    {
-      title: 'Weather App',
-      description: 'Aplicativo de previsão do tempo com geolocalização, previsão de 7 dias e alertas meteorológicos.',
-      tools: ['React', 'TypeScript', 'OpenWeather API', 'Tailwind'],
-      image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600&h=400&fit=crop',
-    },
-    {
-      title: 'Chat Real-time',
-      description: 'Aplicação de chat em tempo real com salas, mensagens privadas e compartilhamento de arquivos.',
-      tools: ['React', 'Socket.io', 'Node.js', 'MongoDB'],
-      image: 'https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=600&h=400&fit=crop',
+      title: "Curriculum Generator Saas Version",
+      description:
+        "Versão aprimorada do projeto Curriculum Generator, com edição de currículos salvos no app, suporte aos clientes, assinatura de planos e muito mais.",
+      tools: ["NextJs", "Typescript", "TailwindCSS", "MongoDB"],
+      image: "CG-Saas-Version.png",
     },
   ],
-  'en': [
+  en: [
     {
-      title: 'Scientific Calculator',
-      description: 'A complete scientific calculator with a modern and intuitive interface. Supports basic, trigonometric, logarithmic operations and more.',
-      tools: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-      image: 'https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=600&h=400&fit=crop',
+      title: "Scientific Calculator",
+      description:
+        "A complete scientific calculator with a modern and intuitive interface. Supports basic, trigonometric, logarithmic operations and more.",
+      tools: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+      image:
+        "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=600&h=400&fit=crop",
     },
     {
-      title: 'Pokédex',
-      description: 'Web application that consumes the PokéAPI to display detailed information about all Pokémon, including stats, types and evolutions.',
-      tools: ['React', 'JavaScript', 'CSS3', 'REST API'],
-      image: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?w=600&h=400&fit=crop',
+      title: "Pokédex",
+      description:
+        "Web application that consumes the PokéAPI to display detailed information about all Pokémon, including stats, types and evolutions.",
+      tools: ["React", "JavaScript", "CSS3", "REST API"],
+      image:
+        "https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?w=600&h=400&fit=crop",
     },
     {
-      title: 'Task Manager Pro',
-      description: 'Complete task management system with authentication, categories, priorities and real-time notifications.',
-      tools: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma'],
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop',
+      title: "Task Manager Pro",
+      description:
+        "Complete task management system with authentication, categories, priorities and real-time notifications.",
+      tools: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
+      image:
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
     },
     {
-      title: 'E-commerce Dashboard',
-      description: 'Admin panel for online stores with interactive charts, product management and sales analytics.',
-      tools: ['React', 'Node.js', 'MongoDB', 'Chart.js'],
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
+      title: "E-commerce Dashboard",
+      description:
+        "Admin panel for online stores with interactive charts, product management and sales analytics.",
+      tools: ["React", "Node.js", "MongoDB", "Chart.js"],
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
     },
     {
-      title: 'Weather App',
-      description: 'Weather forecast app with geolocation, 7-day forecast and weather alerts.',
-      tools: ['React', 'TypeScript', 'OpenWeather API', 'Tailwind'],
-      image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600&h=400&fit=crop',
+      title: "Weather App",
+      description:
+        "Weather forecast app with geolocation, 7-day forecast and weather alerts.",
+      tools: ["React", "TypeScript", "OpenWeather API", "Tailwind"],
+      image:
+        "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600&h=400&fit=crop",
     },
     {
-      title: 'Real-time Chat',
-      description: 'Real-time chat application with rooms, private messages and file sharing.',
-      tools: ['React', 'Socket.io', 'Node.js', 'MongoDB'],
-      image: 'https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=600&h=400&fit=crop',
+      title: "Real-time Chat",
+      description:
+        "Real-time chat application with rooms, private messages and file sharing.",
+      tools: ["React", "Socket.io", "Node.js", "MongoDB"],
+      image:
+        "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=600&h=400&fit=crop",
     },
   ],
-  'es': [
+  es: [
     {
-      title: 'Calculadora Científica',
-      description: 'Una calculadora científica completa con interfaz moderna e intuitiva. Soporta operaciones básicas, trigonométricas, logarítmicas y más.',
-      tools: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-      image: 'https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=600&h=400&fit=crop',
+      title: "Calculadora Científica",
+      description:
+        "Una calculadora científica completa con interfaz moderna e intuitiva. Soporta operaciones básicas, trigonométricas, logarítmicas y más.",
+      tools: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+      image:
+        "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=600&h=400&fit=crop",
     },
     {
-      title: 'Pokédex',
-      description: 'Aplicación web que consume la PokéAPI para mostrar información detallada sobre todos los Pokémon, incluyendo stats, tipos y evoluciones.',
-      tools: ['React', 'JavaScript', 'CSS3', 'REST API'],
-      image: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?w=600&h=400&fit=crop',
+      title: "Pokédex",
+      description:
+        "Aplicación web que consume la PokéAPI para mostrar información detallada sobre todos los Pokémon, incluyendo stats, tipos y evoluciones.",
+      tools: ["React", "JavaScript", "CSS3", "REST API"],
+      image:
+        "https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?w=600&h=400&fit=crop",
     },
     {
-      title: 'Task Manager Pro',
-      description: 'Sistema completo de gestión de tareas con autenticación, categorías, prioridades y notificaciones en tiempo real.',
-      tools: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma'],
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop',
+      title: "Task Manager Pro",
+      description:
+        "Sistema completo de gestión de tareas con autenticación, categorías, prioridades y notificaciones en tiempo real.",
+      tools: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
+      image:
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
     },
     {
-      title: 'E-commerce Dashboard',
-      description: 'Panel administrativo para tiendas virtuales con gráficos interactivos, gestión de productos y análisis de ventas.',
-      tools: ['React', 'Node.js', 'MongoDB', 'Chart.js'],
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
+      title: "E-commerce Dashboard",
+      description:
+        "Panel administrativo para tiendas virtuales con gráficos interactivos, gestión de productos y análisis de ventas.",
+      tools: ["React", "Node.js", "MongoDB", "Chart.js"],
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
     },
     {
-      title: 'Weather App',
-      description: 'Aplicación de pronóstico del tiempo con geolocalización, pronóstico de 7 días y alertas meteorológicas.',
-      tools: ['React', 'TypeScript', 'OpenWeather API', 'Tailwind'],
-      image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600&h=400&fit=crop',
+      title: "Weather App",
+      description:
+        "Aplicación de pronóstico del tiempo con geolocalización, pronóstico de 7 días y alertas meteorológicas.",
+      tools: ["React", "TypeScript", "OpenWeather API", "Tailwind"],
+      image:
+        "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600&h=400&fit=crop",
     },
     {
-      title: 'Chat en Tiempo Real',
-      description: 'Aplicación de chat en tiempo real con salas, mensajes privados y compartición de archivos.',
-      tools: ['React', 'Socket.io', 'Node.js', 'MongoDB'],
-      image: 'https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=600&h=400&fit=crop',
+      title: "Chat en Tiempo Real",
+      description:
+        "Aplicación de chat en tiempo real con salas, mensajes privados y compartición de archivos.",
+      tools: ["React", "Socket.io", "Node.js", "MongoDB"],
+      image:
+        "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=600&h=400&fit=crop",
     },
   ],
 };
 
 // Skills data
 const skillsData = [
-  { icon: HTML5, name: 'HTML5' },
-  { icon: CSS3, name: 'CSS3' },
-  { icon: JavaScript, name: 'JavaScript' },
-  { icon: TypeScript, name: 'TypeScript' },
-  { icon: ReactIcon, name: 'React' },
-  { icon: NextJs, name: 'Next.js' },
-  { icon: NodeJs, name: 'Node.js' },
-  { icon: TailwindCSS, name: 'Tailwind CSS' },
-  { icon: Python, name: 'Python' },
-  { icon: PostgreSQL, name: 'PostgreSQL' },
-  { icon: MongoDB, name: 'MongoDB' },
-  { icon: Git, name: 'Git' },
-  { icon: GitHubDark, name: 'GitHub' },
-  { icon: Docker, name: 'Docker' },
-  { icon: Figma, name: 'Figma' },
-  { icon: ViteJS, name: 'Vite' },
+  { icon: HTML5, name: "HTML5" },
+  { icon: CSS3, name: "CSS3" },
+  { icon: Sass, name: "Sass" },
+  { icon: JavaScript, name: "JavaScript" },
+  { icon: TypeScript, name: "TypeScript" },
+  { icon: ReactIcon, name: "ReactJs" },
+  { icon: NextJs, name: "Next.js" },
+  { icon: NodeJs, name: "Node.js" },
+  { icon: TailwindCSS, name: "Tailwind CSS" },
+  { icon: MongoDB, name: "MongoDB" },
+  { icon: MySQL, name: "MySQL" },
+  { icon: Git, name: "Git" },
+  { icon: GitHubDark, name: "GitHub" },
+  { icon: VercelDark, name: "Vercel" },
 ];
 
-type Language = 'pt-BR' | 'en' | 'es';
+type Language = "pt-BR" | "en" | "es";
 
 const Index = () => {
   const [isDark, setIsDark] = useState(false);
-  const [language, setLanguage] = useState<Language>('pt-BR');
+  const [language, setLanguage] = useState<Language>("pt-BR");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
@@ -351,16 +369,16 @@ const Index = () => {
 
   useEffect(() => {
     if (isDark) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [isDark]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMenuOpen(false);
   };
@@ -368,9 +386,9 @@ const Index = () => {
   const displayedProjects = showAllProjects ? projects : projects.slice(0, 3);
 
   const languageLabels: Record<Language, string> = {
-    'pt-BR': 'PT',
-    'en': 'EN',
-    'es': 'ES',
+    "pt-BR": "PT",
+    en: "EN",
+    es: "ES",
   };
 
   return (
@@ -385,20 +403,22 @@ const Index = () => {
               animate={{ opacity: 1, x: 0 }}
               className="text-xl md:text-2xl font-bold gradient-text"
             >
-              {'<Dev />'}
+              {"<Lucas Dev />"}
             </motion.div>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
-              {(['about', 'projects', 'skills', 'contact'] as const).map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item)}
-                  className="text-foreground/80 hover:text-primary transition-colors font-medium"
-                >
-                  {t.nav[item]}
-                </button>
-              ))}
+              {(["about", "projects", "skills", "contact"] as const).map(
+                (item) => (
+                  <button
+                    key={item}
+                    onClick={() => scrollToSection(item)}
+                    className="text-foreground/80 hover:text-primary transition-colors font-medium"
+                  >
+                    {t.nav[item]}
+                  </button>
+                ),
+              )}
             </nav>
 
             {/* Controls */}
@@ -410,7 +430,9 @@ const Index = () => {
                   className="flex items-center gap-1 px-3 py-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors"
                 >
                   <Globe className="w-4 h-4" />
-                  <span className="text-sm font-medium">{languageLabels[language]}</span>
+                  <span className="text-sm font-medium">
+                    {languageLabels[language]}
+                  </span>
                 </button>
                 <AnimatePresence>
                   {isLangMenuOpen && (
@@ -420,7 +442,7 @@ const Index = () => {
                       exit={{ opacity: 0, y: -10 }}
                       className="absolute right-0 mt-2 py-2 w-32 glass rounded-lg shadow-card"
                     >
-                      {(['pt-BR', 'en', 'es'] as Language[]).map((lang) => (
+                      {(["pt-BR", "en", "es"] as Language[]).map((lang) => (
                         <button
                           key={lang}
                           onClick={() => {
@@ -428,10 +450,14 @@ const Index = () => {
                             setIsLangMenuOpen(false);
                           }}
                           className={`w-full px-4 py-2 text-left hover:bg-muted/50 transition-colors ${
-                            language === lang ? 'text-primary font-medium' : ''
+                            language === lang ? "text-primary font-medium" : ""
                           }`}
                         >
-                          {lang === 'pt-BR' ? 'Português' : lang === 'en' ? 'English' : 'Español'}
+                          {lang === "pt-BR"
+                            ? "Português"
+                            : lang === "en"
+                              ? "English"
+                              : "Español"}
                         </button>
                       ))}
                     </motion.div>
@@ -444,7 +470,11 @@ const Index = () => {
                 onClick={() => setIsDark(!isDark)}
                 className="p-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors"
               >
-                {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                {isDark ? (
+                  <Sun className="w-5 h-5" />
+                ) : (
+                  <Moon className="w-5 h-5" />
+                )}
               </button>
 
               {/* Mobile Menu Toggle */}
@@ -452,7 +482,11 @@ const Index = () => {
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="md:hidden p-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors"
               >
-                {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {isMenuOpen ? (
+                  <X className="w-5 h-5" />
+                ) : (
+                  <Menu className="w-5 h-5" />
+                )}
               </button>
             </div>
           </div>
@@ -463,20 +497,22 @@ const Index = () => {
           {isMenuOpen && (
             <motion.nav
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
+              animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden glass border-t border-border"
             >
               <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
-                {(['about', 'projects', 'skills', 'contact'] as const).map((item) => (
-                  <button
-                    key={item}
-                    onClick={() => scrollToSection(item)}
-                    className="text-foreground/80 hover:text-primary transition-colors font-medium text-left py-2"
-                  >
-                    {t.nav[item]}
-                  </button>
-                ))}
+                {(["about", "projects", "skills", "contact"] as const).map(
+                  (item) => (
+                    <button
+                      key={item}
+                      onClick={() => scrollToSection(item)}
+                      className="text-foreground/80 hover:text-primary transition-colors font-medium text-left py-2"
+                    >
+                      {t.nav[item]}
+                    </button>
+                  ),
+                )}
               </div>
             </motion.nav>
           )}
@@ -488,7 +524,10 @@ const Index = () => {
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full gradient-bg opacity-20 blur-3xl animate-float" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-secondary opacity-20 blur-3xl animate-float" style={{ animationDelay: '1.5s' }} />
+          <div
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-secondary opacity-20 blur-3xl animate-float"
+            style={{ animationDelay: "1.5s" }}
+          />
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -538,7 +577,7 @@ const Index = () => {
               className="flex flex-wrap items-center justify-center gap-4 mt-10"
             >
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/lucas-gomes-santana-77892a343/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-6 py-3 rounded-full gradient-bg text-primary-foreground font-medium hover:opacity-90 transition-opacity shadow-glow"
@@ -547,7 +586,7 @@ const Index = () => {
                 LinkedIn
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/lucas-gomes-santana"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-6 py-3 rounded-full bg-card border border-border font-medium hover:bg-muted transition-colors shadow-card"
@@ -590,36 +629,31 @@ const Index = () => {
               {t.about.title}
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-              {/* About Text */}
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+              {/* Profile Photo + About Text */}
               <div className="glass p-6 md:p-8 rounded-2xl shadow-card">
+                {/* Profile Photo Container */}
+                <div className="flex justify-center mb-8">
+                  <div className="relative">
+                    <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden ring-4 ring-primary/30 shadow-glow">
+                      <img
+                        src="/My-Photo.png"
+                        alt="Foto de perfil"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    {/* Decorative ring */}
+                    <div className="absolute -inset-2 rounded-full border-2 border-primary/20 animate-pulse" />
+                  </div>
+                </div>
+
                 <p className="text-foreground/80 leading-relaxed text-base md:text-lg">
                   {t.about.text}
                 </p>
 
-                <div className="flex flex-wrap gap-4 mt-8">
-                  <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                    LinkedIn
-                  </a>
-                  <a
-                    href="https://github.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Github className="w-5 h-5" />
-                    GitHub
-                  </a>
-                </div>
-
                 <a
-                  href="#"
+                  href="/Lucas-Gomes-Santana-Curriculo.pdf"
+                  download="Lucas-Gomes-Santana-Curriculo.pdf"
                   className="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full gradient-bg text-primary-foreground font-medium hover:opacity-90 transition-opacity shadow-glow"
                 >
                   <Download className="w-5 h-5" />
@@ -877,7 +911,7 @@ const Index = () => {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/lucas-gomes-santana-77892a343/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -885,7 +919,7 @@ const Index = () => {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/lucas-gomes-santana"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
