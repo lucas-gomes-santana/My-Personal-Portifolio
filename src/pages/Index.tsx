@@ -39,6 +39,8 @@ import {
   Globe,
 } from "lucide-react";
 
+import emailjs from "@emailjs/browser";
+
 // Translations
 const translations = {
   "pt-BR": {
@@ -215,7 +217,7 @@ const projectsData = {
       title: "Site da PeuCar Automotivos",
       description:
         "Projeto freelance que desenvolvi para um pequeno negócio de oficina de automóveis.",
-      tools: ["HTML5", "CSS3", "Javascript", "NodeJs", "Vercel"],
+      tools: ["HTML5", "Sass", "Javascript", "NodeJs", "Vercel"],
       image: "/PeuCar-Website.png",
     },
     {
@@ -223,8 +225,7 @@ const projectsData = {
       description:
         "Aplicativo web que foi feito para simular um MVP Micro-Saas. Permite ao usuário criar um currículo personalizado com base em suas informações profissionais.",
       tools: ["React", "JavaScript", "CSS3", "Vercel"],
-      image:
-        "https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?w=600&h=400&fit=crop",
+      image: "Curriculum-Generator.png",
     },
     {
       title: "C.E.R.F (Cadastro Escolar com Reconhecimento Facial)",
@@ -246,7 +247,7 @@ const projectsData = {
       title: "PeuCar Automotive Website",
       description:
         "Freelance project I developed for a small automotive workshop business.",
-      tools: ["HTML5", "CSS3", "Javascript", "NodeJs", "Vercel"],
+      tools: ["HTML5", "Sass", "Javascript", "NodeJs", "Vercel"],
       image: "/PeuCar-Website.png",
     },
     {
@@ -254,8 +255,7 @@ const projectsData = {
       description:
         "Web application made to simulate a Micro-Saas MVP. Allows users to create a personalized resume based on their professional information.",
       tools: ["React", "JavaScript", "CSS3", "Vercel"],
-      image:
-        "https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?w=600&h=400&fit=crop",
+      image: "Curriculum-Generator.png",
     },
     {
       title: "C.E.R.F (School Registration with Facial Recognition)",
@@ -277,7 +277,7 @@ const projectsData = {
       title: "Sitio Web de PeuCar Automotriz",
       description:
         "Proyecto freelance que desarrollé para un pequeño negocio de taller automotriz.",
-      tools: ["HTML5", "CSS3", "Javascript", "NodeJs", "Vercel"],
+      tools: ["HTML5", "Sass", "Javascript", "NodeJs", "Vercel"],
       image: "/PeuCar-Website.png",
     },
     {
@@ -285,8 +285,7 @@ const projectsData = {
       description:
         "Aplicación web hecha para simular un MVP Micro-Saas. Permite al usuario crear un currículum personalizado basado en su información profesional.",
       tools: ["React", "JavaScript", "CSS3", "Vercel"],
-      image:
-        "https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?w=600&h=400&fit=crop",
+      image: "Curriculum-Generator.png",
     },
     {
       title: "C.E.R.F (Registro Escolar con Reconocimiento Facial)",
@@ -325,12 +324,129 @@ const skillsData = [
 
 type Language = "pt-BR" | "en" | "es";
 
+function formatPhoneNumber(value: string): string {
+  let digits = value.replace(/\D/g, "");
+
+  digits = digits.slice(0, 11);
+
+  if (digits.length === 0) return "";
+
+  if (digits.length <= 2) {
+    return `(${digits}`;
+  }
+
+  if (digits.length <= 3) {
+    return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+  }
+
+  if (digits.length <= 7) {
+    return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}`;
+  }
+
+  return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+}
+
+function validateEmail(email: string): boolean {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+function validatePhone(phone: string) {
+  const phoneRegex = /^\(\d{2}\)\s9\d{4}-\d{4}$/;
+  return phoneRegex.test(phone);
+}
+
+emailjs.init({
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+});
+
 const Index = () => {
   const [isDark, setIsDark] = useState(false);
   const [language, setLanguage] = useState<Language>("pt-BR");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+
+  // Contact form code
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+  const [isSending, setIsSending] = useState(false);
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+    setError("");
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+    setError("");
+  };
+
+  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMessage(e.target.value);
+    setError("");
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formattedPhone = formatPhoneNumber(e.target.value);
+    setPhone(formattedPhone);
+    setError("");
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError("");
+
+    if (name.length < 10) {
+      setError("Insira seu nome completo!");
+      return;
+    }
+
+    if (email.length < 8 || !validateEmail(email)) {
+      setError("Insira um email válido!");
+      return;
+    }
+
+    if (phone.length > 0 && !validatePhone(phone)) {
+      setError("Insira um número de telefone válido!");
+      return;
+    }
+
+    setIsSending(true);
+
+    try {
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        message: `Mensagem enviada por ${name}\n\n Número: ${phone} \n\n E-mail: ${email}\n\n${message}`,
+      };
+
+      const response = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+      );
+
+      if (response.status === 200) {
+        alert("");
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
+        setError("");
+      } else {
+        throw new Error("Falha ao enviar a mensagem");
+      }
+    } catch (error) {
+      console.error("Falha ao enviar a mensagem:", error);
+      setError("Falha ao enviar a mensagem. Por favor, tente novamente.");
+    } finally {
+      setIsSending(false);
+    }
+  };
 
   const t = translations[language];
   const projects = projectsData[language];
@@ -810,7 +926,12 @@ const Index = () => {
               {t.contact.subtitle}
             </p>
 
-            <form className="glass p-6 md:p-8 rounded-2xl shadow-card space-y-6">
+            {error && <p className="text-red-600 text-sm">{error}</p>}
+
+            <form
+              className="glass p-6 md:p-8 rounded-2xl shadow-card space-y-6"
+              onSubmit={handleSubmit}
+            >
               <div>
                 <label className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
                   <User className="w-4 h-4" />
@@ -819,6 +940,10 @@ const Index = () => {
                 <input
                   type="text"
                   placeholder={t.contact.namePlaceholder}
+                  value={name}
+                  onChange={handleNameChange}
+                  disabled={isSending}
+                  required
                   className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                 />
               </div>
@@ -831,6 +956,10 @@ const Index = () => {
                 <input
                   type="email"
                   placeholder={t.contact.emailPlaceholder}
+                  value={email}
+                  onChange={handleEmailChange}
+                  disabled={isSending}
+                  required
                   className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                 />
               </div>
@@ -843,6 +972,10 @@ const Index = () => {
                 <input
                   type="tel"
                   placeholder={t.contact.phonePlaceholder}
+                  value={phone}
+                  onChange={handlePhoneChange}
+                  disabled={isSending}
+                  required
                   className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                 />
               </div>
@@ -854,6 +987,10 @@ const Index = () => {
                 </label>
                 <textarea
                   placeholder={t.contact.messagePlaceholder}
+                  value={message}
+                  onChange={handleMessageChange}
+                  disabled={isSending}
+                  required
                   rows={5}
                   className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
                 />
