@@ -10,11 +10,6 @@ import {
   TailwindCSS,
   Git,
   GitHubDark,
-  Python,
-  PostgreSQL,
-  Docker,
-  Figma,
-  ViteJS,
   NextJs,
   MongoDB,
   MySQL,
@@ -219,6 +214,7 @@ const projectsData = {
         "Projeto freelance que desenvolvi para um pequeno negócio de oficina de automóveis.",
       tools: ["HTML5", "Sass", "Javascript", "NodeJs", "Vercel"],
       image: "/PeuCar-Website.png",
+      link: "https://peucar-automotivos-ipira.vercel.app/",
     },
     {
       title: "Curriculum Generator",
@@ -226,6 +222,7 @@ const projectsData = {
         "Aplicativo web que foi feito para simular um MVP Micro-Saas. Permite ao usuário criar um currículo personalizado com base em suas informações profissionais.",
       tools: ["React", "JavaScript", "CSS3", "Vercel"],
       image: "Curriculum-Generator.png",
+      link: "https://curriculum-generator-rho.vercel.app/redirect-page",
     },
     {
       title: "C.E.R.F (Cadastro Escolar com Reconhecimento Facial)",
@@ -233,6 +230,7 @@ const projectsData = {
         "Sistema de cadastro e autenticação biométrica facial para escolas. Possui o objetivo de reforçar a segurança bloqueando acesso não autorizado.",
       tools: ["React", "Javascript", "Typescript", "Express", "TailwindCSS"],
       image: "CERF.png",
+      link: "#",
     },
     {
       title: "Curriculum Generator Saas Version",
@@ -240,6 +238,7 @@ const projectsData = {
         "Versão aprimorada do projeto Curriculum Generator, com edição de currículos salvos no app, suporte aos clientes, assinatura de planos e muito mais.",
       tools: ["NextJs", "Typescript", "TailwindCSS", "MongoDB", "Vercel"],
       image: "CG-Saas-Version.png",
+      link: "https://curriculum-generator-saas-version.vercel.app/",
     },
   ],
   en: [
@@ -249,6 +248,7 @@ const projectsData = {
         "Freelance project I developed for a small automotive workshop business.",
       tools: ["HTML5", "Sass", "Javascript", "NodeJs", "Vercel"],
       image: "/PeuCar-Website.png",
+      link: "https://peucar-automotivos-ipira.vercel.app/",
     },
     {
       title: "Curriculum Generator",
@@ -256,6 +256,7 @@ const projectsData = {
         "Web application made to simulate a Micro-Saas MVP. Allows users to create a personalized resume based on their professional information.",
       tools: ["React", "JavaScript", "CSS3", "Vercel"],
       image: "Curriculum-Generator.png",
+      link: "https://curriculum-generator-rho.vercel.app/redirect-page",
     },
     {
       title: "C.E.R.F (School Registration with Facial Recognition)",
@@ -263,6 +264,7 @@ const projectsData = {
         "Facial biometric registration and authentication system for schools. Aims to enhance security by blocking unauthorized access.",
       tools: ["React", "Javascript", "Typescript", "Express", "TailwindCSS"],
       image: "CERF.png",
+      link: "#",
     },
     {
       title: "Curriculum Generator Saas Version",
@@ -270,6 +272,7 @@ const projectsData = {
         "Enhanced version of the Curriculum Generator project, with editing of saved resumes in the app, customer support, plan subscriptions and much more.",
       tools: ["NextJs", "Typescript", "TailwindCSS", "MongoDB", "Vercel"],
       image: "CG-Saas-Version.png",
+      link: "https://curriculum-generator-saas-version.vercel.app/",
     },
   ],
   es: [
@@ -279,6 +282,7 @@ const projectsData = {
         "Proyecto freelance que desarrollé para un pequeño negocio de taller automotriz.",
       tools: ["HTML5", "Sass", "Javascript", "NodeJs", "Vercel"],
       image: "/PeuCar-Website.png",
+      link: "https://peucar-automotivos-ipira.vercel.app/",
     },
     {
       title: "Curriculum Generator",
@@ -286,6 +290,7 @@ const projectsData = {
         "Aplicación web hecha para simular un MVP Micro-Saas. Permite al usuario crear un currículum personalizado basado en su información profesional.",
       tools: ["React", "JavaScript", "CSS3", "Vercel"],
       image: "Curriculum-Generator.png",
+      link: "https://curriculum-generator-rho.vercel.app/redirect-page",
     },
     {
       title: "C.E.R.F (Registro Escolar con Reconocimiento Facial)",
@@ -293,6 +298,7 @@ const projectsData = {
         "Sistema de registro y autenticación biométrica facial para escuelas. Tiene como objetivo reforzar la seguridad bloqueando el acceso no autorizado.",
       tools: ["React", "Javascript", "Typescript", "Express", "TailwindCSS"],
       image: "CERF.png",
+      link: "#",
     },
     {
       title: "Curriculum Generator Versión Saas",
@@ -300,6 +306,7 @@ const projectsData = {
         "Versión mejorada del proyecto Curriculum Generator, con edición de currículums guardados en la app, soporte a clientes, suscripción de planes y mucho más.",
       tools: ["NextJs", "Typescript", "TailwindCSS", "MongoDB", "Vercel"],
       image: "CG-Saas-Version.png",
+      link: "https://curriculum-generator-saas-version.vercel.app/",
     },
   ],
 };
@@ -323,28 +330,6 @@ const skillsData = [
 ];
 
 type Language = "pt-BR" | "en" | "es";
-
-function formatPhoneNumber(value: string): string {
-  let digits = value.replace(/\D/g, "");
-
-  digits = digits.slice(0, 11);
-
-  if (digits.length === 0) return "";
-
-  if (digits.length <= 2) {
-    return `(${digits}`;
-  }
-
-  if (digits.length <= 3) {
-    return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
-  }
-
-  if (digits.length <= 7) {
-    return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}`;
-  }
-
-  return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
-}
 
 function validateEmail(email: string): boolean {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -391,8 +376,7 @@ const Index = () => {
   };
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const formattedPhone = formatPhoneNumber(e.target.value);
-    setPhone(formattedPhone);
+    setPhone(e.target.value);
     setError("");
   };
 
@@ -802,10 +786,15 @@ const Index = () => {
                         className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-card/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <button className="flex items-center gap-2 text-sm font-medium text-primary-foreground gradient-bg px-4 py-2 rounded-full">
+                        <a
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          href={project.link}
+                          className="flex items-center gap-2 text-sm font-medium text-primary-foreground gradient-bg px-4 py-2 rounded-full"
+                        >
                           {t.projects.viewProject}
                           <ExternalLink className="w-4 h-4" />
-                        </button>
+                        </a>
                       </div>
                     </div>
                     <div className="p-5 md:p-6">
