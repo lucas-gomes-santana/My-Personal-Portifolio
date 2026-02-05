@@ -212,7 +212,7 @@ const projectsData = {
       title: "Site da PeuCar Automotivos",
       description:
         "Projeto freelance que desenvolvi para um pequeno negócio de oficina de automóveis.",
-      tools: ["HTML5", "Sass", "Javascript", "NodeJs", "Vercel"],
+      tools: ["HTML5", "Sass", "Javascript", "NodeJs"],
       image: "/PeuCar-Website.png",
       link: "https://peucar-automotivos-ipira.vercel.app/",
     },
@@ -220,7 +220,7 @@ const projectsData = {
       title: "Curriculum Generator",
       description:
         "Aplicativo web que foi feito para simular um MVP Micro-Saas. Permite ao usuário criar um currículo personalizado com base em suas informações profissionais.",
-      tools: ["React", "JavaScript", "CSS3", "Vercel"],
+      tools: ["React", "JavaScript", "CSS3"],
       image: "Curriculum-Generator.png",
       link: "https://curriculum-generator-rho.vercel.app/redirect-page",
     },
@@ -236,9 +236,25 @@ const projectsData = {
       title: "Curriculum Generator Saas Version",
       description:
         "Versão aprimorada do projeto Curriculum Generator, com edição de currículos salvos no app, suporte aos clientes, assinatura de planos e muito mais.",
-      tools: ["NextJs", "Typescript", "TailwindCSS", "MongoDB", "Vercel"],
+      tools: ["NextJs", "Typescript", "TailwindCSS", "MongoDB"],
       image: "CG-Saas-Version.png",
       link: "https://curriculum-generator-saas-version.vercel.app/",
+    },
+    {
+      title: "Jogo de Progressão Aritmética",
+      description:
+        "Jogo matemático simples que aborda o assunto progressão aritmética. Foi desenvolvido para apresentação em um trabalho escolar.",
+      tools: ["HTML5", "CSS3", "Javascript"],
+      image: "Progressao-Aritmetica.png",
+      link: "https://jogo-matematico-de-progressao-aritm.vercel.app/",
+    },
+    {
+      title: "Landing Page da FURIA",
+      description:
+        "Desafio técnico que realizei ao participar de um processo seletivo da organização de E-sports brasileira FURIA.",
+      tools: ["React", "Javascript"],
+      image: "ChatBot-da-FURIA.png",
+      link: "https://landing-page-para-a-furia.vercel.app/",
     },
   ],
   en: [
@@ -246,7 +262,7 @@ const projectsData = {
       title: "PeuCar Automotive Website",
       description:
         "Freelance project I developed for a small automotive workshop business.",
-      tools: ["HTML5", "Sass", "Javascript", "NodeJs", "Vercel"],
+      tools: ["HTML5", "Sass", "Javascript", "NodeJs"],
       image: "/PeuCar-Website.png",
       link: "https://peucar-automotivos-ipira.vercel.app/",
     },
@@ -254,7 +270,7 @@ const projectsData = {
       title: "Curriculum Generator",
       description:
         "Web application made to simulate a Micro-Saas MVP. Allows users to create a personalized resume based on their professional information.",
-      tools: ["React", "JavaScript", "CSS3", "Vercel"],
+      tools: ["React", "JavaScript", "CSS3"],
       image: "Curriculum-Generator.png",
       link: "https://curriculum-generator-rho.vercel.app/redirect-page",
     },
@@ -270,9 +286,25 @@ const projectsData = {
       title: "Curriculum Generator Saas Version",
       description:
         "Enhanced version of the Curriculum Generator project, with editing of saved resumes in the app, customer support, plan subscriptions and much more.",
-      tools: ["NextJs", "Typescript", "TailwindCSS", "MongoDB", "Vercel"],
+      tools: ["NextJs", "Typescript", "TailwindCSS", "MongoDB"],
       image: "CG-Saas-Version.png",
       link: "https://curriculum-generator-saas-version.vercel.app/",
+    },
+    {
+      title: "Arithmetic Progression Game",
+      description:
+        "Simple math game that addresses the topic of arithmetic progression. It was developed for presentation in a school project.",
+      tools: ["HTML5", "CSS3", "Javascript"],
+      image: "Progressao-Aritmetica.png",
+      link: "https://jogo-matematico-de-progressao-aritm.vercel.app/",
+    },
+    {
+      title: "FURIA Landing Page",
+      description:
+        "Technical challenge I completed while participating in a selection process for the Brazilian E-sports organization FURIA.",
+      tools: ["React", "Javascript"],
+      image: "ChatBot-da-FURIA.png",
+      link: "https://landing-page-para-a-furia.vercel.app/",
     },
   ],
   es: [
@@ -280,7 +312,7 @@ const projectsData = {
       title: "Sitio Web de PeuCar Automotriz",
       description:
         "Proyecto freelance que desarrollé para un pequeño negocio de taller automotriz.",
-      tools: ["HTML5", "Sass", "Javascript", "NodeJs", "Vercel"],
+      tools: ["HTML5", "Sass", "Javascript", "NodeJs"],
       image: "/PeuCar-Website.png",
       link: "https://peucar-automotivos-ipira.vercel.app/",
     },
@@ -288,7 +320,7 @@ const projectsData = {
       title: "Curriculum Generator",
       description:
         "Aplicación web hecha para simular un MVP Micro-Saas. Permite al usuario crear un currículum personalizado basado en su información profesional.",
-      tools: ["React", "JavaScript", "CSS3", "Vercel"],
+      tools: ["React", "JavaScript", "CSS3"],
       image: "Curriculum-Generator.png",
       link: "https://curriculum-generator-rho.vercel.app/redirect-page",
     },
@@ -304,9 +336,25 @@ const projectsData = {
       title: "Curriculum Generator Versión Saas",
       description:
         "Versión mejorada del proyecto Curriculum Generator, con edición de currículums guardados en la app, soporte a clientes, suscripción de planes y mucho más.",
-      tools: ["NextJs", "Typescript", "TailwindCSS", "MongoDB", "Vercel"],
+      tools: ["NextJs", "Typescript", "TailwindCSS", "MongoDB"],
       image: "CG-Saas-Version.png",
       link: "https://curriculum-generator-saas-version.vercel.app/",
+    },
+    {
+      title: "Juego de Progresión Aritmética",
+      description:
+        "Simple juego matemático que aborda el tema de la progresión aritmética. Fue desarrollado para apresentação em um trabalho escolar.",
+      tools: ["HTML5", "CSS3", "Javascript"],
+      image: "Progressao-Aritmetica.png",
+      link: "https://jogo-matematico-de-progressao-aritm.vercel.app/",
+    },
+    {
+      title: "Landing Page de FURIA",
+      description:
+        "Desafío técnico que completé mientras participaba en un proceso de selección de la organización de E-sports brasileña FURIA.",
+      tools: ["React", "Javascript"],
+      image: "ChatBot-da-FURIA.png",
+      link: "https://landing-page-para-a-furia.vercel.app/",
     },
   ],
 };
@@ -326,7 +374,6 @@ const skillsData = [
   { icon: MySQL, name: "MySQL" },
   { icon: Git, name: "Git" },
   { icon: GitHubDark, name: "GitHub" },
-  { icon: VercelDark, name: "Vercel" },
 ];
 
 type Language = "pt-BR" | "en" | "es";
