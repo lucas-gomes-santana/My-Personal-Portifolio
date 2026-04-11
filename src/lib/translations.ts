@@ -193,8 +193,8 @@ export const projectsData = {
         "Sistema de cadastro e autenticação biométrica facial para escolas. Possui o objetivo de reforçar a segurança bloqueando acesso não autorizado.",
       tools: ["React", "Javascript", "Typescript", "Express", "TailwindCSS"],
       image: "CERF.png",
-      link: "#",
-      isPrivate: true,
+      link: "https://github.com/lucas-gomes-santana/Reconhecimento-Facial-Para-Escolas",
+      isPrivate: false, // Matendo lógica de projeto privado caso haja mudança futura
     },
     {
       title: "Curriculum Generator Saas Version",
@@ -244,8 +244,8 @@ export const projectsData = {
         "Facial biometric registration and authentication system for schools. Aims to enhance security by blocking unauthorized access.",
       tools: ["React", "Javascript", "Typescript", "Express", "TailwindCSS"],
       image: "CERF.png",
-      link: "#",
-      isPrivate: true,
+      link: "https://github.com/lucas-gomes-santana/Reconhecimento-Facial-Para-Escolas",
+      isPrivate: false, // Matendo lógica de projeto privado caso haja mudança futura
     },
     {
       title: "Curriculum Generator Saas Version",
@@ -295,8 +295,8 @@ export const projectsData = {
         "Sistema de registro y autenticación biométrica facial para escuelas. Tiene como objetivo reforzar la seguridad bloqueando el acceso no autorizado.",
       tools: ["React", "Javascript", "Typescript", "Express", "TailwindCSS"],
       image: "CERF.png",
-      link: "#",
-      isPrivate: true,
+      link: "https://github.com/lucas-gomes-santana/Reconhecimento-Facial-Para-Escolas",
+      isPrivate: false, // Matendo lógica de projeto privado caso haja mudança futura
     },
     {
       title: "Curriculum Generator Versión Saas",
