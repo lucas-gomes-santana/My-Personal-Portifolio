@@ -1,5 +1,5 @@
 # Lucas Gomes Santana Portifólio
 
-Este repositório contém o meu modelo de portifólio que uso para exibição de informações sobre mim, como projetos e habilidades. Também é possível enviar uma mensagem de contato para o meu E-mail através do portifólio.
+Meu modelo de portifólio que desenvolvi para uso pessoal para exibição de serviços e habilidades que tenho com programação.
 
 Visite-o por esse link: <a href="https://lucas-gomes-santana-portifolio.vercel.app/home">https://lucas-gomes-santana-portifolio.vercel.app</a>

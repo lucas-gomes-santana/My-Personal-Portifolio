@@ -36,7 +36,7 @@ export const translations = {
     },
     skills: {
       title: "Habilidades",
-      subtitle: "Tecnologias que domino",
+      subtitle: "Ferramentas que uso",
     },
     contact: {
       title: "Contato",
@@ -92,7 +92,7 @@ export const translations = {
     },
     skills: {
       title: "Skills",
-      subtitle: "Technologies I master",
+      subtitle: "Tools that I use",
     },
     contact: {
       title: "Contact",
@@ -148,7 +148,7 @@ export const translations = {
     },
     skills: {
       title: "Habilidades",
-      subtitle: "Tecnologías que domino",
+      subtitle: "Herramientas que uso",
     },
     contact: {
       title: "Contacto",
