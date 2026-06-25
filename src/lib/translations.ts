@@ -111,62 +111,6 @@ export const translations = {
       rights: "All rights reserved.",
     },
   },
-  es: {
-    nav: {
-      about: "Sobre",
-      projects: "Proyectos",
-      skills: "Habilidades",
-      contact: "Contacto",
-    },
-    hero: {
-      greeting: "Hola, soy",
-      name: "Lucas Gomes",
-      role: "Desarrollador Full Stack",
-      description: "Transformando ideas en experiencias digitales increíbles",
-    },
-    about: {
-      title: "Sobre Mí",
-      text: "Soy Desarrollador de Software autodidacta y estoy buscando mi primera oportunidad en el área de tecnología. Trabajo con sitios web, landing pages, APIs REST y otros tipos de aplicaciones. Tengo experiencia con proyectos freelance, proyectos académicos y proyectos open source en GitHub, contribuyendo actualmente en los repositorios de VsCode y Vite.",
-      services: "Servicios",
-      servicesList: [
-        "Prototipado de nuevas aplicaciones",
-        "Desarrollo de aplicaciones web completas",
-        "Creación y pruebas de APIs RESTful",
-        "Desarrollo de interfaces responsivas",
-        "Ayuda en el modelado de bases de datos",
-        "Mantenimiento de proyectos existentes o legacy",
-      ],
-      downloadCV: "Descargar CV",
-    },
-    projects: {
-      title: "Proyectos",
-      viewMore: "Ver Más",
-      viewLess: "Ver Menos",
-      viewProject: "Ver Proyecto",
-      tools: "Herramientas",
-      private: "Proyecto privado",
-    },
-    skills: {
-      title: "Habilidades",
-      subtitle: "Herramientas que uso",
-    },
-    contact: {
-      title: "Contacto",
-      subtitle: "¿Trabajamos juntos?",
-      name: "Nombre Completo",
-      email: "Correo Electrónico",
-      phone: "Teléfono",
-      message: "Mensaje",
-      send: "Enviar Mensaje",
-      namePlaceholder: "Tu nombre completo",
-      emailPlaceholder: "tu@email.com",
-      phonePlaceholder: "+34 000 000 000",
-      messagePlaceholder: "Escribe tu mensaje aquí...",
-    },
-    footer: {
-      rights: "Todos los derechos reservados.",
-    },
-  },
 };
 
 export const projectsData = {
@@ -267,57 +211,6 @@ export const projectsData = {
       title: "FURIA Landing Page",
       description:
         "Technical challenge I completed while participating in a selection process for the Brazilian E-sports organization FURIA.",
-      tools: ["React", "Javascript"],
-      image: "ChatBot-da-FURIA.png",
-      link: "https://landing-page-para-a-furia.vercel.app/",
-    },
-  ],
-  es: [
-    {
-      title: "Sitio Web de PeuCar Automotriz",
-      description:
-        "Proyecto freelance que desarrollé para un pequeño negocio de taller automotriz.",
-      tools: ["HTML5", "Sass", "Javascript", "NodeJs"],
-      image: "/PeuCar-Website.png",
-      link: "https://peucar-automotivos-ipira.vercel.app/",
-    },
-    {
-      title: "Curriculum Generator",
-      description:
-        "Aplicación web hecha para simular un MVP Micro-Saas. Permite al usuario crear un currículum personalizado basado en su información profesional.",
-      tools: ["React", "JavaScript", "CSS3"],
-      image: "Curriculum-Generator.png",
-      link: "https://curriculum-generator-rho.vercel.app/redirect-page",
-    },
-    {
-      title: "C.E.R.F (Registro Escolar con Reconocimiento Facial)",
-      description:
-        "Sistema de registro y autenticación biométrica facial para escuelas. Tiene como objetivo reforzar la seguridad bloqueando el acceso no autorizado.",
-      tools: ["React", "Javascript", "Typescript", "Express", "TailwindCSS"],
-      image: "CERF.png",
-      link: "https://github.com/lucas-gomes-santana/Reconhecimento-Facial-Para-Escolas",
-      isPrivate: false, // Matendo lógica de projeto privado caso haja mudança futura
-    },
-    {
-      title: "Curriculum Generator Versión Saas",
-      description:
-        "Versión mejorada del proyecto Curriculum Generator, con edición de currículums guardados en la app, soporte a clientes, suscripción de planes y mucho más.",
-      tools: ["NextJs", "Typescript", "TailwindCSS", "MongoDB"],
-      image: "CG-Saas-Version.png",
-      link: "https://www.curriculumgenerator.com.br/",
-    },
-    {
-      title: "Juego de Progresión Aritmética",
-      description:
-        "Simple juego matemático que aborda el tema de la progresión aritmética. Fue desarrollado para apresentação em um trabalho escolar.",
-      tools: ["HTML5", "CSS3", "Javascript"],
-      image: "Progressao-Aritmetica.png",
-      link: "https://jogo-matematico-de-progressao-aritm.vercel.app/",
-    },
-    {
-      title: "Landing Page de FURIA",
-      description:
-        "Desafío técnico que completé mientras participaba en un proceso de selección de la organización de E-sports brasileña FURIA.",
       tools: ["React", "Javascript"],
       image: "ChatBot-da-FURIA.png",
       link: "https://landing-page-para-a-furia.vercel.app/",

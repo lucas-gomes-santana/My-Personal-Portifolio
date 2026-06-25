@@ -13,7 +13,6 @@ import {
   NextJs,
   MongoDB,
   MySQL,
-  VercelDark,
   Sass,
 } from "developer-icons";
 import {
@@ -37,7 +36,6 @@ import {
 import emailjs from "@emailjs/browser";
 import { projectsData, translations } from "@/lib/translations";
 
-// Skills data
 const skillsData = [
   { icon: HTML5, name: "HTML5" },
   { icon: CSS3, name: "CSS3" },
@@ -54,7 +52,7 @@ const skillsData = [
   { icon: GitHubDark, name: "GitHub" },
 ];
 
-type Language = "pt-BR" | "en" | "es";
+type Language = "pt-BR" | "en";
 
 function validateEmail(email: string): boolean {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -77,7 +75,6 @@ const Index = () => {
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
 
-  // Contact form code
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -181,7 +178,6 @@ const Index = () => {
   const languageLabels: Record<Language, string> = {
     "pt-BR": "PT",
     en: "EN",
-    es: "ES",
   };
 
   return (
@@ -235,7 +231,7 @@ const Index = () => {
                       exit={{ opacity: 0, y: -10 }}
                       className="absolute right-0 mt-2 py-2 w-32 glass rounded-lg shadow-card"
                     >
-                      {(["pt-BR", "en", "es"] as Language[]).map((lang) => (
+                      {(["pt-BR", "en"] as Language[]).map((lang) => (
                         <button
                           key={lang}
                           onClick={() => {
@@ -246,11 +242,7 @@ const Index = () => {
                             language === lang ? "text-primary font-medium" : ""
                           }`}
                         >
-                          {lang === "pt-BR"
-                            ? "Português"
-                            : lang === "en"
-                              ? "English"
-                              : "Español"}
+                          {lang === "pt-BR" ? "Português" : "English"}
                         </button>
                       ))}
                     </motion.div>
