@@ -202,7 +202,7 @@ export const projectsData = {
         "Versão aprimorada do projeto Curriculum Generator, com edição de currículos salvos no app, suporte aos clientes, assinatura de planos e muito mais.",
       tools: ["NextJs", "Typescript", "TailwindCSS", "MongoDB"],
       image: "CG-Saas-Version.png",
-      link: "https://curriculum-generator-saas-version.vercel.app/",
+      link: "https://www.curriculumgenerator.com.br/",
     },
     {
       title: "Jogo de Progressão Aritmética",
@@ -253,7 +253,7 @@ export const projectsData = {
         "Enhanced version of the Curriculum Generator project, with editing of saved resumes in the app, customer support, plan subscriptions and much more.",
       tools: ["NextJs", "Typescript", "TailwindCSS", "MongoDB"],
       image: "CG-Saas-Version.png",
-      link: "https://curriculum-generator-saas-version.vercel.app/",
+      link: "https://www.curriculumgenerator.com.br/",
     },
     {
       title: "Arithmetic Progression Game",
@@ -304,7 +304,7 @@ export const projectsData = {
         "Versión mejorada del proyecto Curriculum Generator, con edición de currículums guardados en la app, soporte a clientes, suscripción de planes y mucho más.",
       tools: ["NextJs", "Typescript", "TailwindCSS", "MongoDB"],
       image: "CG-Saas-Version.png",
-      link: "https://curriculum-generator-saas-version.vercel.app/",
+      link: "https://www.curriculumgenerator.com.br/",
     },
     {
       title: "Juego de Progresión Aritmética",
